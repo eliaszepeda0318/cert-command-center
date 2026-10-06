@@ -1,0 +1,4 @@
+[
+  { "id": "ccna-200-301", "title": "CCNA", "fullTitle": "Cisco CCNA 200-301", "status": "active", "order": 1, "activeBlueprintId": "ccna-200-301-v1.1" },
+  { "id": "security-plus", "title": "Security+", "fullTitle": "CompTIA Security+", "status": "coming_later", "order": 2, "activeBlueprintId": null }
+]

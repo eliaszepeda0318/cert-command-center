@@ -1,0 +1,2270 @@
+{
+ "_meta": {
+  "source": "https://courses.jeremysitlab.com/p/ccna",
+  "fetched": "2026-10-06",
+  "notes": [
+   "Lecture URLs are Teachable links (paid enrollment) as listed on the official course page",
+   "Free YouTube playlist verified: playlistUrl",
+   "Bonus quizzes omitted",
+   "Lab files come via Jeremy's email signup (sendfox.com/jeremysitlab); no per-lab file URLs verified",
+   "Teachable URLs retained as source/reference URLs. Individual YouTube URLs null unless verified. Lab download URLs null. Bonus quizzes excluded from V1."
+  ]
+ },
+ "id": "ccna-jeremy",
+ "certificationId": "ccna-200-301",
+ "title": "Jeremy's IT Lab CCNA 200-301",
+ "playlistUrl": "https://www.youtube.com/playlist?list=PLxbwE86jKRgMpuZuLBivzlM8s2Dk5lXBQ",
+ "days": [
+  {
+   "id": "ccna-jeremy-day-01",
+   "day": 1,
+   "title": "Network Devices",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-01-lec-1",
+     "title": "Network Devices",
+     "kind": "lecture",
+     "durationSec": 1794,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24406833",
+     "teachableLectureId": "24406833",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    },
+    {
+     "id": "ccna-jeremy-day-01-lec-2",
+     "title": "Anki Flashcards",
+     "kind": "extra",
+     "durationSec": 670,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/44752005",
+     "teachableLectureId": "44752005",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-01-lab-1",
+     "title": "Intro to Packet Tracer",
+     "kind": "lab",
+     "durationSec": 745,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/44767179",
+     "teachableLectureId": "44767179",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-02",
+   "day": 2,
+   "title": "Interfaces and Cables",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-02-lec-1",
+     "title": "Interfaces and Cables",
+     "kind": "lecture",
+     "durationSec": 2078,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24406949",
+     "teachableLectureId": "24406949",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-02-lab-1",
+     "title": "Connecting Devices",
+     "kind": "lab",
+     "durationSec": 299,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24406950",
+     "teachableLectureId": "24406950",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-03",
+   "day": 3,
+   "title": "The TCP/IP Model",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-03-lec-1",
+     "title": "The TCP/IP Model",
+     "kind": "lecture",
+     "durationSec": 2541,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/64034340",
+     "teachableLectureId": "64034340",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-03-lab-1",
+     "title": "OSI Model",
+     "kind": "lab",
+     "durationSec": 453,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407036",
+     "teachableLectureId": "24407036",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [
+    "Canonical title follows the official course page; YouTube title differs"
+   ],
+   "altTitles": [
+    {
+     "source": "youtube",
+     "title": "OSI Model & TCP/IP Suite"
+    }
+   ]
+  },
+  {
+   "id": "ccna-jeremy-day-04",
+   "day": 4,
+   "title": "Intro to the CLI",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-04-lec-1",
+     "title": "Intro to the CLI",
+     "kind": "lecture",
+     "durationSec": 1779,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407089",
+     "teachableLectureId": "24407089",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-04-lab-1",
+     "title": "Basic Device Security",
+     "kind": "lab",
+     "durationSec": 588,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407093",
+     "teachableLectureId": "24407093",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-05",
+   "day": 5,
+   "title": "Ethernet LAN Switching (Part 1)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-05-lec-1",
+     "title": "Ethernet LAN Switching (Part 1)",
+     "kind": "lecture",
+     "durationSec": 2236,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407190",
+     "teachableLectureId": "24407190",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-06",
+   "day": 6,
+   "title": "Ethernet LAN Switching (Part 2)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-06-lec-1",
+     "title": "Ethernet LAN Switching (Part 2)",
+     "kind": "lecture",
+     "durationSec": 1973,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407211",
+     "teachableLectureId": "24407211",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-06-lab-1",
+     "title": "Ethernet LAN Switching",
+     "kind": "lab",
+     "durationSec": 606,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407215",
+     "teachableLectureId": "24407215",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-07",
+   "day": 7,
+   "title": "IPv4 Addressing (Part 1)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-07-lec-1",
+     "title": "IPv4 Addressing (Part 1)",
+     "kind": "lecture",
+     "durationSec": 2358,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407276",
+     "teachableLectureId": "24407276",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-08",
+   "day": 8,
+   "title": "IPv4 Addressing (Part 2)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-08-lec-1",
+     "title": "IPv4 Addressing (Part 2)",
+     "kind": "lecture",
+     "durationSec": 1789,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407287",
+     "teachableLectureId": "24407287",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-08-lab-1",
+     "title": "Configuring IPv4 Addresses",
+     "kind": "lab",
+     "durationSec": 583,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407290",
+     "teachableLectureId": "24407290",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-09",
+   "day": 9,
+   "title": "Switch Interfaces",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-09-lec-1",
+     "title": "Switch Interfaces",
+     "kind": "lecture",
+     "durationSec": 1891,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407340",
+     "teachableLectureId": "24407340",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-09-lab-1",
+     "title": "Configuring Switch Interfaces",
+     "kind": "lab",
+     "durationSec": 691,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407342",
+     "teachableLectureId": "24407342",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-10",
+   "day": 10,
+   "title": "The IPv4 Header",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-10-lec-1",
+     "title": "The IPv4 Header",
+     "kind": "lecture",
+     "durationSec": 1748,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407367",
+     "teachableLectureId": "24407367",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-11",
+   "day": 11,
+   "title": "Routing Fundamentals & Static Routing",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-11-lec-1",
+     "title": "Routing Fundamentals",
+     "kind": "lecture",
+     "durationSec": 1763,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/44615811",
+     "teachableLectureId": "44615811",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    },
+    {
+     "id": "ccna-jeremy-day-11-lec-2",
+     "title": "Static Routing",
+     "kind": "lecture",
+     "durationSec": 2167,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/44656963",
+     "teachableLectureId": "44656963",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-11-lab-1",
+     "title": "Configuring Static Routes",
+     "kind": "lab",
+     "durationSec": 728,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407420",
+     "teachableLectureId": "24407420",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    },
+    {
+     "id": "ccna-jeremy-day-11-lab-2",
+     "title": "Troubleshooting Static Routes",
+     "kind": "lab",
+     "durationSec": 542,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407422",
+     "teachableLectureId": "24407422",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-12",
+   "day": 12,
+   "title": "Life of a Packet",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-12-lec-1",
+     "title": "Life of a Packet",
+     "kind": "lecture",
+     "durationSec": 1133,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407473",
+     "teachableLectureId": "24407473",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-12-lab-1",
+     "title": "Life of a Packet",
+     "kind": "lab",
+     "durationSec": 902,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407475",
+     "teachableLectureId": "24407475",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-13",
+   "day": 13,
+   "title": "Subnetting (Part 1)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-13-lec-1",
+     "title": "Subnetting (Part 1)",
+     "kind": "lecture",
+     "durationSec": 1647,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407531",
+     "teachableLectureId": "24407531",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-14",
+   "day": 14,
+   "title": "Subnetting (Part 2)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-14-lec-1",
+     "title": "Subnetting (Part 2)",
+     "kind": "lecture",
+     "durationSec": 1436,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407539",
+     "teachableLectureId": "24407539",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-15",
+   "day": 15,
+   "title": "Subnetting (Part 3)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-15-lec-1",
+     "title": "Subnetting (Part 3)",
+     "kind": "lecture",
+     "durationSec": 1376,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407549",
+     "teachableLectureId": "24407549",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-15-lab-1",
+     "title": "VLSM",
+     "kind": "lab",
+     "durationSec": 895,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407551",
+     "teachableLectureId": "24407551",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-16",
+   "day": 16,
+   "title": "VLANs (Part 1)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-16-lec-1",
+     "title": "VLANs (Part 1)",
+     "kind": "lecture",
+     "durationSec": 1362,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407573",
+     "teachableLectureId": "24407573",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-16-lab-1",
+     "title": "VLANs (Part 1)",
+     "kind": "lab",
+     "durationSec": 635,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407574",
+     "teachableLectureId": "24407574",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-17",
+   "day": 17,
+   "title": "VLANs (Part 2)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-17-lec-1",
+     "title": "VLANs (Part 2)",
+     "kind": "lecture",
+     "durationSec": 2322,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407601",
+     "teachableLectureId": "24407601",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-17-lab-1",
+     "title": "VLANs (Part 2)",
+     "kind": "lab",
+     "durationSec": 690,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407602",
+     "teachableLectureId": "24407602",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-18",
+   "day": 18,
+   "title": "VLANs (Part 3)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-18-lec-1",
+     "title": "VLANs (Part 3)",
+     "kind": "lecture",
+     "durationSec": 1775,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407617",
+     "teachableLectureId": "24407617",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-18-lab-1",
+     "title": "Multilayer Switching",
+     "kind": "lab",
+     "durationSec": 569,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407618",
+     "teachableLectureId": "24407618",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-19",
+   "day": 19,
+   "title": "DTP & VTP",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-19-lec-1",
+     "title": "DTP/VTP",
+     "kind": "lecture",
+     "durationSec": 2140,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407758",
+     "teachableLectureId": "24407758",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-19-lab-1",
+     "title": "DTP/VTP",
+     "kind": "lab",
+     "durationSec": 641,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407760",
+     "teachableLectureId": "24407760",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-20",
+   "day": 20,
+   "title": "Spanning Tree Protocol (Part 1)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-20-lec-1",
+     "title": "STP (Part 1)",
+     "kind": "lecture",
+     "durationSec": 2175,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407771",
+     "teachableLectureId": "24407771",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-20-lab-1",
+     "title": "Analyzing STP",
+     "kind": "lab",
+     "durationSec": 631,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407773",
+     "teachableLectureId": "24407773",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-21",
+   "day": 21,
+   "title": "Spanning Tree Protocol (Part 2)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-21-lec-1",
+     "title": "STP (Part 2)",
+     "kind": "lecture",
+     "durationSec": 2402,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407861",
+     "teachableLectureId": "24407861",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    },
+    {
+     "id": "ccna-jeremy-day-21-lec-2",
+     "title": "PortFast",
+     "kind": "lecture",
+     "durationSec": 1053,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/56735611",
+     "teachableLectureId": "56735611",
+     "ccnaV11Addition": true,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    },
+    {
+     "id": "ccna-jeremy-day-21-lec-3",
+     "title": "BPDU Guard & BPDU Filter",
+     "kind": "lecture",
+     "durationSec": 1329,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/56735613",
+     "teachableLectureId": "56735613",
+     "ccnaV11Addition": true,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    },
+    {
+     "id": "ccna-jeremy-day-21-lec-4",
+     "title": "Root Guard",
+     "kind": "lecture",
+     "durationSec": 1035,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/57223111",
+     "teachableLectureId": "57223111",
+     "ccnaV11Addition": true,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    },
+    {
+     "id": "ccna-jeremy-day-21-lec-5",
+     "title": "Loop Guard",
+     "kind": "lecture",
+     "durationSec": 982,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/57622433",
+     "teachableLectureId": "57622433",
+     "ccnaV11Addition": true,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-21-lab-1",
+     "title": "Configuring STP",
+     "kind": "lab",
+     "durationSec": 660,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407863",
+     "teachableLectureId": "24407863",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-22",
+   "day": 22,
+   "title": "Rapid STP",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-22-lec-1",
+     "title": "Rapid STP",
+     "kind": "lecture",
+     "durationSec": 2418,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407882",
+     "teachableLectureId": "24407882",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-22-lab-1",
+     "title": "Rapid STP",
+     "kind": "lab",
+     "durationSec": 589,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407883",
+     "teachableLectureId": "24407883",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-23",
+   "day": 23,
+   "title": "EtherChannel",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-23-lec-1",
+     "title": "EtherChannel",
+     "kind": "lecture",
+     "durationSec": 2359,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407915",
+     "teachableLectureId": "24407915",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-23-lab-1",
+     "title": "EtherChannel",
+     "kind": "lab",
+     "durationSec": 844,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24407917",
+     "teachableLectureId": "24407917",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-24",
+   "day": 24,
+   "title": "Dynamic Routing",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-24-lec-1",
+     "title": "Dynamic Routing",
+     "kind": "lecture",
+     "durationSec": 2543,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24408001",
+     "teachableLectureId": "24408001",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-24-lab-1",
+     "title": "Floating Static Routes",
+     "kind": "lab",
+     "durationSec": 715,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24408003",
+     "teachableLectureId": "24408003",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-25",
+   "day": 25,
+   "title": "RIP & EIGRP",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-25-lec-1",
+     "title": "RIP & EIGRP",
+     "kind": "lecture",
+     "durationSec": 2457,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24408046",
+     "teachableLectureId": "24408046",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-25-lab-1",
+     "title": "Configuring EIGRP",
+     "kind": "lab",
+     "durationSec": 1426,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24408047",
+     "teachableLectureId": "24408047",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-26",
+   "day": 26,
+   "title": "OSPF (Part 1)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-26-lec-1",
+     "title": "OSPF (Part 1)",
+     "kind": "lecture",
+     "durationSec": 2243,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24408078",
+     "teachableLectureId": "24408078",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-26-lab-1",
+     "title": "Configuring OSPF (Part 1)",
+     "kind": "lab",
+     "durationSec": 736,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24408080",
+     "teachableLectureId": "24408080",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-27",
+   "day": 27,
+   "title": "OSPF (Part 2)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-27-lec-1",
+     "title": "OSPF (Part 2)",
+     "kind": "lecture",
+     "durationSec": 2075,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24408111",
+     "teachableLectureId": "24408111",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-27-lab-1",
+     "title": "Configuring OSPF (Part 2)",
+     "kind": "lab",
+     "durationSec": 834,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24408112",
+     "teachableLectureId": "24408112",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-28",
+   "day": 28,
+   "title": "OSPF (Part 3)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-28-lec-1",
+     "title": "OSPF (Part 3)",
+     "kind": "lecture",
+     "durationSec": 2768,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24408123",
+     "teachableLectureId": "24408123",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-28-lab-1",
+     "title": "Configuring OSPF (Part 3)",
+     "kind": "lab",
+     "durationSec": 757,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24408125",
+     "teachableLectureId": "24408125",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-29",
+   "day": 29,
+   "title": "First Hop Redundancy Protocols",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-29-lec-1",
+     "title": "First Hop Redundancy Protocols",
+     "kind": "lecture",
+     "durationSec": 2307,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24440923",
+     "teachableLectureId": "24440923",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-29-lab-1",
+     "title": "Configuring HSRP",
+     "kind": "lab",
+     "durationSec": 556,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24480191",
+     "teachableLectureId": "24480191",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-30",
+   "day": 30,
+   "title": "TCP & UDP",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-30-lec-1",
+     "title": "TCP & UDP",
+     "kind": "lecture",
+     "durationSec": 1909,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24612754",
+     "teachableLectureId": "24612754",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-30-lab-1",
+     "title": "Wireshark Demo",
+     "kind": "lab",
+     "durationSec": 526,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24643308",
+     "teachableLectureId": "24643308",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-31",
+   "day": 31,
+   "title": "IPv6 (Part 1)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-31-lec-1",
+     "title": "IPv6 (Part 1)",
+     "kind": "lecture",
+     "durationSec": 2212,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24929562",
+     "teachableLectureId": "24929562",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-31-lab-1",
+     "title": "Configuring IPv6 (Part 1)",
+     "kind": "lab",
+     "durationSec": 407,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/24969265",
+     "teachableLectureId": "24969265",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-32",
+   "day": 32,
+   "title": "IPv6 (Part 2)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-32-lec-1",
+     "title": "IPv6 (Part 2)",
+     "kind": "lecture",
+     "durationSec": 2204,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/25148251",
+     "teachableLectureId": "25148251",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-32-lab-1",
+     "title": "Configuring IPv6 (Part 2)",
+     "kind": "lab",
+     "durationSec": 522,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/25267414",
+     "teachableLectureId": "25267414",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-33",
+   "day": 33,
+   "title": "IPv6 (Part 3)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-33-lec-1",
+     "title": "IPv6 (Part 3)",
+     "kind": "lecture",
+     "durationSec": 2489,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/26748181",
+     "teachableLectureId": "26748181",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-33-lab-1",
+     "title": "Configuring IPv6 (Part 3)",
+     "kind": "lab",
+     "durationSec": 608,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/26984445",
+     "teachableLectureId": "26984445",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-34",
+   "day": 34,
+   "title": "Standard Access Control Lists (ACLs)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-34-lec-1",
+     "title": "Standard ACLs",
+     "kind": "lecture",
+     "durationSec": 2683,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/27290292",
+     "teachableLectureId": "27290292",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-34-lab-1",
+     "title": "Standard ACLs",
+     "kind": "lab",
+     "durationSec": 739,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/27306920",
+     "teachableLectureId": "27306920",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-35",
+   "day": 35,
+   "title": "Extended Access Control Lists (ACLs)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-35-lec-1",
+     "title": "Extended ACLs",
+     "kind": "lecture",
+     "durationSec": 2330,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/27501974",
+     "teachableLectureId": "27501974",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-35-lab-1",
+     "title": "Extended ACLs",
+     "kind": "lab",
+     "durationSec": 508,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/27582037",
+     "teachableLectureId": "27582037",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-36",
+   "day": 36,
+   "title": "CDP & LLDP",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-36-lec-1",
+     "title": "CDP & LLDP",
+     "kind": "lecture",
+     "durationSec": 2239,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/27783248",
+     "teachableLectureId": "27783248",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-36-lab-1",
+     "title": "CDP & LLDP",
+     "kind": "lab",
+     "durationSec": 912,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/27878642",
+     "teachableLectureId": "27878642",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-37",
+   "day": 37,
+   "title": "NTP (Network Time Protocol)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-37-lec-1",
+     "title": "NTP",
+     "kind": "lecture",
+     "durationSec": 2457,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/28034532",
+     "teachableLectureId": "28034532",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-37-lab-1",
+     "title": "NTP",
+     "kind": "lab",
+     "durationSec": 607,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/28052517",
+     "teachableLectureId": "28052517",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-38",
+   "day": 38,
+   "title": "DNS",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-38-lec-1",
+     "title": "DNS",
+     "kind": "lecture",
+     "durationSec": 1686,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/29598906",
+     "teachableLectureId": "29598906",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-38-lab-1",
+     "title": "DNS",
+     "kind": "lab",
+     "durationSec": 437,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/29635683",
+     "teachableLectureId": "29635683",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-39",
+   "day": 39,
+   "title": "DHCP",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-39-lec-1",
+     "title": "DHCP",
+     "kind": "lecture",
+     "durationSec": 2102,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/29904969",
+     "teachableLectureId": "29904969",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-39-lab-1",
+     "title": "DHCP",
+     "kind": "lab",
+     "durationSec": 440,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/30042040",
+     "teachableLectureId": "30042040",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-40",
+   "day": 40,
+   "title": "SNMP",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-40-lec-1",
+     "title": "SNMP",
+     "kind": "lecture",
+     "durationSec": 1642,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/30252426",
+     "teachableLectureId": "30252426",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-40-lab-1",
+     "title": "SNMP",
+     "kind": "lab",
+     "durationSec": 311,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/30263749",
+     "teachableLectureId": "30263749",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-41",
+   "day": 41,
+   "title": "Syslog",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-41-lec-1",
+     "title": "Syslog",
+     "kind": "lecture",
+     "durationSec": 1559,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/30400541",
+     "teachableLectureId": "30400541",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-41-lab-1",
+     "title": "Syslog",
+     "kind": "lab",
+     "durationSec": 421,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/30415537",
+     "teachableLectureId": "30415537",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-42",
+   "day": 42,
+   "title": "SSH",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-42-lec-1",
+     "title": "SSH",
+     "kind": "lecture",
+     "durationSec": 1750,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/30564299",
+     "teachableLectureId": "30564299",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-42-lab-1",
+     "title": "SSH",
+     "kind": "lab",
+     "durationSec": 445,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/30651958",
+     "teachableLectureId": "30651958",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-43",
+   "day": 43,
+   "title": "FTP & TFTP",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-43-lec-1",
+     "title": "FTP & TFTP",
+     "kind": "lecture",
+     "durationSec": 1742,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/30861661",
+     "teachableLectureId": "30861661",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-43-lab-1",
+     "title": "FTP & TFTP",
+     "kind": "lab",
+     "durationSec": 433,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/31143666",
+     "teachableLectureId": "31143666",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-44",
+   "day": 44,
+   "title": "NAT (Part 1)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-44-lec-1",
+     "title": "NAT (Part 1)",
+     "kind": "lecture",
+     "durationSec": 1814,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/31233762",
+     "teachableLectureId": "31233762",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-44-lab-1",
+     "title": "Static NAT",
+     "kind": "lab",
+     "durationSec": 324,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/31274605",
+     "teachableLectureId": "31274605",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-45",
+   "day": 45,
+   "title": "NAT (Part 2)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-45-lec-1",
+     "title": "NAT (Part 2)",
+     "kind": "lecture",
+     "durationSec": 1666,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/31341576",
+     "teachableLectureId": "31341576",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-45-lab-1",
+     "title": "Dynamic NAT",
+     "kind": "lab",
+     "durationSec": 394,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/31370286",
+     "teachableLectureId": "31370286",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-46",
+   "day": 46,
+   "title": "QoS (Part 1)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-46-lec-1",
+     "title": "QoS (Part 1)",
+     "kind": "lecture",
+     "durationSec": 1835,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/31722497",
+     "teachableLectureId": "31722497",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-46-lab-1",
+     "title": "Voice VLANs",
+     "kind": "lab",
+     "durationSec": 385,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/31840622",
+     "teachableLectureId": "31840622",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-47",
+   "day": 47,
+   "title": "QoS (Part 2)",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-47-lec-1",
+     "title": "QoS (Part 2)",
+     "kind": "lecture",
+     "durationSec": 2380,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/31995999",
+     "teachableLectureId": "31995999",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-47-lab-1",
+     "title": "QoS",
+     "kind": "lab",
+     "durationSec": 832,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/32075753",
+     "teachableLectureId": "32075753",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-48",
+   "day": 48,
+   "title": "Security Fundamentals",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-48-lec-1",
+     "title": "Security Fundamentals",
+     "kind": "lecture",
+     "durationSec": 2214,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/32141550",
+     "teachableLectureId": "32141550",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-48-lab-1",
+     "title": "Kali Linux Demo",
+     "kind": "lab",
+     "durationSec": 556,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/32355938",
+     "teachableLectureId": "32355938",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-49",
+   "day": 49,
+   "title": "Port Security",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-49-lec-1",
+     "title": "Port Security",
+     "kind": "lecture",
+     "durationSec": 1957,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/32627334",
+     "teachableLectureId": "32627334",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-49-lab-1",
+     "title": "Port Security",
+     "kind": "lab",
+     "durationSec": 500,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/32714919",
+     "teachableLectureId": "32714919",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-50",
+   "day": 50,
+   "title": "DHCP Snooping",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-50-lec-1",
+     "title": "DHCP Snooping",
+     "kind": "lecture",
+     "durationSec": 1595,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/32850466",
+     "teachableLectureId": "32850466",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-50-lab-1",
+     "title": "DHCP Snooping",
+     "kind": "lab",
+     "durationSec": 298,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/32852721",
+     "teachableLectureId": "32852721",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-51",
+   "day": 51,
+   "title": "Dynamic ARP Inspection",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-51-lec-1",
+     "title": "Dynamic ARP Inspection",
+     "kind": "lecture",
+     "durationSec": 1853,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/33093497",
+     "teachableLectureId": "33093497",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-51-lab-1",
+     "title": "Dynamic ARP Inspection",
+     "kind": "lab",
+     "durationSec": 456,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/33102963",
+     "teachableLectureId": "33102963",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-52",
+   "day": 52,
+   "title": "LAN Architectures",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-52-lec-1",
+     "title": "LAN Architectures",
+     "kind": "lecture",
+     "durationSec": 1558,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/33342744",
+     "teachableLectureId": "33342744",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-52-lab-1",
+     "title": "STP & FHRP Synchronization",
+     "kind": "lab",
+     "durationSec": 488,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/33344409",
+     "teachableLectureId": "33344409",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-53",
+   "day": 53,
+   "title": "WAN Architectures",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-53-lec-1",
+     "title": "WAN Architectures",
+     "kind": "lecture",
+     "durationSec": 2137,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/33622029",
+     "teachableLectureId": "33622029",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-53-lab-1",
+     "title": "GRE Tunnels",
+     "kind": "lab",
+     "durationSec": 588,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/33669505",
+     "teachableLectureId": "33669505",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-54",
+   "day": 54,
+   "title": "Virtualization & Cloud",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-54-lec-1",
+     "title": "Virtualization & Cloud",
+     "kind": "lecture",
+     "durationSec": 2201,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/33719542",
+     "teachableLectureId": "33719542",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    },
+    {
+     "id": "ccna-jeremy-day-54-lec-2",
+     "title": "Containers",
+     "kind": "lecture",
+     "durationSec": 713,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/44461095",
+     "teachableLectureId": "44461095",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    },
+    {
+     "id": "ccna-jeremy-day-54-lec-3",
+     "title": "VRF",
+     "kind": "lecture",
+     "durationSec": 984,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/44474761",
+     "teachableLectureId": "44474761",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-54-lab-1",
+     "title": "Oracle VirtualBox",
+     "kind": "lab",
+     "durationSec": 455,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/33890750",
+     "teachableLectureId": "33890750",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-55",
+   "day": 55,
+   "title": "Wireless Fundamentals",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-55-lec-1",
+     "title": "Wireless Fundamentals",
+     "kind": "lecture",
+     "durationSec": 2045,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/34127295",
+     "teachableLectureId": "34127295",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-56",
+   "day": 56,
+   "title": "Wireless Architectures",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-56-lec-1",
+     "title": "Wireless Architectures",
+     "kind": "lecture",
+     "durationSec": 2187,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/34414073",
+     "teachableLectureId": "34414073",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-57",
+   "day": 57,
+   "title": "Wireless Security",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-57-lec-1",
+     "title": "Wireless Security",
+     "kind": "lecture",
+     "durationSec": 1914,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/35353150",
+     "teachableLectureId": "35353150",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-58",
+   "day": 58,
+   "title": "Wireless Configuration",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-58-lec-1",
+     "title": "Wireless Configuration",
+     "kind": "lecture",
+     "durationSec": 2680,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/35649090",
+     "teachableLectureId": "35649090",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [
+    {
+     "id": "ccna-jeremy-day-58-lab-1",
+     "title": "Wireless LANs",
+     "kind": "lab",
+     "durationSec": 976,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/35765494",
+     "teachableLectureId": "35765494",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "downloadUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-59",
+   "day": 59,
+   "title": "Intro to Network Automation",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-59-lec-1",
+     "title": "Intro to Network Automation",
+     "kind": "lecture",
+     "durationSec": 1900,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/36028432",
+     "teachableLectureId": "36028432",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    },
+    {
+     "id": "ccna-jeremy-day-59-lec-2",
+     "title": "AI & Machine Learning",
+     "kind": "lecture",
+     "durationSec": 2364,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/59735260",
+     "teachableLectureId": "59735260",
+     "ccnaV11Addition": true,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-60",
+   "day": 60,
+   "title": "JSON, XML, & YAML",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-60-lec-1",
+     "title": "JSON, XML, & YAML",
+     "kind": "lecture",
+     "durationSec": 1637,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/36171366",
+     "teachableLectureId": "36171366",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-61",
+   "day": 61,
+   "title": "REST APIs",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-61-lec-1",
+     "title": "REST APIs",
+     "kind": "lecture",
+     "durationSec": 1807,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/36642922",
+     "teachableLectureId": "36642922",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    },
+    {
+     "id": "ccna-jeremy-day-61-lec-2",
+     "title": "REST API Authentication",
+     "kind": "lecture",
+     "durationSec": 1609,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/59790053",
+     "teachableLectureId": "59790053",
+     "ccnaV11Addition": true,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-62",
+   "day": 62,
+   "title": "Software-Defined Networking",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-62-lec-1",
+     "title": "SDN",
+     "kind": "lecture",
+     "durationSec": 1605,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/36774007",
+     "teachableLectureId": "36774007",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    }
+   ],
+   "labs": [],
+   "reviewFlags": [],
+   "altTitles": []
+  },
+  {
+   "id": "ccna-jeremy-day-63",
+   "day": 63,
+   "title": "Ansible, Puppet, Chef",
+   "lectures": [
+    {
+     "id": "ccna-jeremy-day-63-lec-1",
+     "title": "Ansible, Puppet, Chef",
+     "kind": "lecture",
+     "durationSec": 1189,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/36955902",
+     "teachableLectureId": "36955902",
+     "ccnaV11Addition": false,
+     "youtubeUrl": null,
+     "reviewFlags": []
+    },
+    {
+     "id": "ccna-jeremy-day-63-lec-2",
+     "title": "Terraform",
+     "kind": "lecture",
+     "durationSec": 1212,
+     "durationSource": "courses.jeremysitlab.com",
+     "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/60530236",
+     "teachableLectureId": "60530236",
+     "ccnaV11Addition": true,
+     "youtubeUrl": null,
+     "reviewFlags": [],
+     "notes": "Treated as a v1.1 addition per Cisco's official release notes (owner decision, 2026-10-06); not marked on the Jeremy course page. Re-verify against the official blueprint at import."
+    }
+   ],
+   "labs": [],
+   "reviewFlags": [],
+   "altTitles": []
+  }
+ ],
+ "megaLab": {
+  "id": "ccna-jeremy-mega-lab",
+  "title": "CCNA Mega Lab",
+  "kind": "lab",
+  "durationSec": 9396,
+  "url": "https://courses.jeremysitlab.com/courses/ccna/lectures/53221733",
+  "teachableLectureId": "53221733",
+  "youtubeUrl": null,
+  "downloadUrl": null,
+  "reviewFlags": []
+ },
+ "version": "2026-10-06.2"
+}
