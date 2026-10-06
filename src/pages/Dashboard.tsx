@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useAppData } from '../context/AppDataContext';
-import { completedLectureIds, courseCompletion, fmtMin, labProg, labsOf, levelFromXp, lessonProg, nextLesson, requiredLectures, weeklyMinutes, XP_PER_LEVEL } from '../lib/progress';
+import { completedLectureIds, courseCompletion, fmtDur, fmtMin, labProg, labsOf, levelFromXp, lessonProg, nextLesson, requiredLectures, weeklyMinutes, XP_PER_LEVEL } from '../lib/progress';
 import { topicState } from '../lib/topics';
 import { Card, EmptyState, Pill, ProgressBar, Stat, btnPrimary } from '../components/ui';
 
@@ -14,9 +14,9 @@ export default function Dashboard() {
   const week = weeklyMinutes(sessions);
   const done = next ? completedLectureIds(next, lessonProg(progress, next.id)) : new Set<string>();
   const tasks = next ? [
-    { k: 'anki', label: 'Anki review (today)', done: ankiDoneToday },
-    ...requiredLectures(next).map((x) => ({ k: x.id, label: `Lecture: ${x.title}`, done: done.has(x.id) })),
-    ...labsOf(next, labsById).map((l) => ({ k: l.id, label: `Lab: ${l.title}`, done: labProg(progress, l.id)?.status === 'completed' })),
+    { k: 'anki', label: 'Anki review (today)', meta: '', done: ankiDoneToday },
+    ...requiredLectures(next).map((x) => ({ k: x.id, label: `Lecture: ${x.title}`, meta: fmtDur(x.durationSec), done: done.has(x.id) })),
+    ...labsOf(next, labsById).map((l) => { const st = labProg(progress, l.id)?.status; return { k: l.id, label: `${st === 'needs_redo' ? 'Redo lab' : 'Lab'}: ${l.title}`, meta: fmtDur(l.durationSec), done: st === 'completed' }; }),
   ] : [];
   const weak = topics.map((t) => ({ t, s: topicState(t, topicProgress.get(t.id), lessonsById, progress) })).filter((x) => x.s.status === 'needs_review').sort((a, b) => b.s.priority - a.s.priority).slice(0, 5);
   const xp = profile.stats.xp;
@@ -26,6 +26,19 @@ export default function Dashboard() {
         <div><div className="text-xs uppercase tracking-wider text-zinc-500">{activeCert?.fullTitle}</div>
           <h1 className="text-xl font-semibold">{next ? (next.dayNumber != null ? `Day ${next.dayNumber}: ${next.title}` : next.title) : 'Course complete'}</h1></div>
         {next && <Link to="/study" className={btnPrimary}>Continue Studying</Link>}
+      </div>
+      <div className="grid gap-4 md:grid-cols-5">
+        <Card title="Today's study tasks" className="md:col-span-3">
+          {tasks.length ? <ul className="space-y-2 text-sm">{tasks.map((t) => (
+            <li key={t.k} className="flex items-center gap-2"><span aria-hidden className={`h-3 w-3 shrink-0 rounded-sm border ${t.done ? 'border-emerald-500 bg-emerald-500' : 'border-zinc-600'}`} />
+              <span className={`min-w-0 flex-1 truncate ${t.done ? 'text-zinc-500 line-through' : ''}`}>{t.label}</span>{t.meta && <span className="shrink-0 text-xs tabular-nums text-zinc-500">{t.meta}</span>}</li>))}</ul>
+            : <p className="text-sm text-zinc-500">Nothing left. Nice work.</p>}
+        </Card>
+        <Card title="Weak topics" className="md:col-span-2" action={<Link to="/topics" className="text-xs text-sky-400 hover:underline">All topics</Link>}>
+          {weak.length ? <ul className="space-y-2 text-sm">{weak.map(({ t, s }) => (
+            <li key={t.id} className="flex items-center justify-between gap-2"><span className="min-w-0 truncate">{t.title}</span>
+              <span className="flex shrink-0 gap-1.5">{s.missCount > 0 && <Pill tone="bad">Missed {s.missCount}x</Pill>}<Pill tone="bad">{s.effective != null ? `${s.effective}/5` : 'Needs review'}</Pill></span></li>))}</ul>
+            : <p className="text-sm text-zinc-500">No topics need review. Rate topics 1–5 on the Topics page.</p>}</Card>
       </div>
       <div className="grid gap-4 md:grid-cols-3">
         <Card title="Course completion">
@@ -39,19 +52,6 @@ export default function Dashboard() {
             <Stat label="Labs" value={`${c.labs}/${c.labTotal}`} />
             <Stat label="Anki sessions" value={profile.stats.ankiSessions} />
           </div></Card>
-      </div>
-      <div className="grid gap-4 md:grid-cols-2">
-        <Card title="Today's study tasks">
-          {tasks.length ? <ul className="space-y-2 text-sm">{tasks.map((t) => (
-            <li key={t.k} className="flex items-center gap-2"><span aria-hidden className={`h-3 w-3 rounded-sm border ${t.done ? 'border-emerald-500 bg-emerald-500' : 'border-zinc-600'}`} />
-              <span className={t.done ? 'text-zinc-500 line-through' : ''}>{t.label}</span></li>))}</ul>
-            : <p className="text-sm text-zinc-500">Nothing left. Nice work.</p>}
-        </Card>
-        <Card title="Weak topics" action={<Link to="/topics" className="text-xs text-sky-400 hover:underline">All topics</Link>}>
-          {weak.length ? <ul className="space-y-2 text-sm">{weak.map(({ t, s }) => (
-            <li key={t.id} className="flex items-center justify-between gap-2"><span className="truncate">{t.title}</span>
-              <span className="flex shrink-0 gap-1.5">{s.missCount > 0 && <Pill tone="bad">Missed {s.missCount}x</Pill>}<Pill tone="bad">{s.effective != null ? `${s.effective}/5` : 'Needs review'}</Pill></span></li>))}</ul>
-            : <p className="text-sm text-zinc-500">No topics need review. Rate topics 1–5 on the Topics page.</p>}</Card>
       </div>
       <Card title="Recent study activity">
         {sessions.length ? <ul className="divide-y divide-zinc-800 text-sm">{sessions.slice(0, 5).map((x) => (

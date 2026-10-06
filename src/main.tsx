@@ -20,6 +20,6 @@ if (missing.length) {
   );
 } else {
   Promise.all([import('./App'), import('./context/AuthContext')]).then(([{ default: App }, { AuthProvider }]) => {
-    root.render(<React.StrictMode><BrowserRouter><AuthProvider><App /></AuthProvider></BrowserRouter></React.StrictMode>);
+    root.render(<React.StrictMode><BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}><AuthProvider><App /></AuthProvider></BrowserRouter></React.StrictMode>);
   });
 }

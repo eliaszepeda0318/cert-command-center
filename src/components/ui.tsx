@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 export const Card = ({ title, action, children, className = '' }: { title?: string; action?: ReactNode; children: ReactNode; className?: string }) => (
-  <section className={`rounded-lg border border-zinc-800 bg-zinc-900/60 p-4 ${className}`}>
+  <section className={`min-w-0 rounded-lg border border-zinc-800 bg-zinc-900/60 p-4 ${className}`}>
     {(title || action) && <div className="mb-3 flex items-center justify-between gap-2">
       {title && <h2 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">{title}</h2>}{action}</div>}
     {children}

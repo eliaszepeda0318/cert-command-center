@@ -40,6 +40,9 @@ export default function Blueprint() {
       </Card>
 
       <Card title={`Coverage gaps (${gaps.length})`}>
+        <details>
+        <summary className="cursor-pointer text-sm text-zinc-400 hover:text-zinc-200">{gaps.length ? `${gaps.filter((g) => g.status === 'no_content').length} objectives have no mapped content; ${gaps.filter((g) => g.status !== 'no_content').length} have content still to finish. Show details` : 'None'}</summary>
+        <div className="mt-3">
         {!gaps.length ? <p className="text-sm text-emerald-400">Every objective is covered by completed content.</p> : (
           <ul className="divide-y divide-zinc-800 text-sm">{gaps.map((r) => (
             <li key={r.objective.id} className="py-2">
@@ -48,6 +51,7 @@ export default function Blueprint() {
                 {r.status === 'no_content' ? (r.tentative.length ? `Only tentative (needs review) content: ${r.tentative.slice(0, 3).map(title).join('; ')}${r.tentative.length > 3 ? '…' : ''}` : 'No Jeremy lesson or lab is mapped to this objective. Plan other study for it.')
                   : `Remaining: ${r.high.filter((u) => !u.done).map((u) => `${dayOf(u)} ${title(u)}`).join('; ')}`}</div>
             </li>))}</ul>)}
+        </div></details>
       </Card>
 
       <div className="flex items-center justify-between"><h2 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">Objectives</h2>

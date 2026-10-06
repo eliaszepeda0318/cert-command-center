@@ -66,6 +66,11 @@ function Session({ lesson }: { lesson: Lesson }) {
       {!started ? (
         <Card>
           <p className="text-sm text-zinc-400">{state.complete ? 'This day is complete. You can still log a review session.' : 'Order: Anki review, lecture, lab, then a quick wrap-up.'}</p>
+          <ul className="mt-3 space-y-1.5 text-sm">
+            <li className="flex items-center gap-2"><span aria-hidden className={`h-3 w-3 shrink-0 rounded-sm border ${ankiDoneToday ? 'border-emerald-500 bg-emerald-500' : 'border-zinc-600'}`} />Anki review (today)</li>
+            {lecs.map((x) => <li key={x.id} className="flex items-center gap-2"><span aria-hidden className={`h-3 w-3 shrink-0 rounded-sm border ${doneLecs.has(x.id) ? 'border-emerald-500 bg-emerald-500' : 'border-zinc-600'}`} /><span className="min-w-0 flex-1 truncate">Lecture: {x.title}</span><span className="text-xs tabular-nums text-zinc-500">{fmtDur(x.durationSec)}</span></li>)}
+            {labs.map((l) => { const st = labProg(progress, l.id)?.status; return <li key={l.id} className="flex items-center gap-2"><span aria-hidden className={`h-3 w-3 shrink-0 rounded-sm border ${st === 'completed' ? 'border-emerald-500 bg-emerald-500' : 'border-zinc-600'}`} /><span className="min-w-0 flex-1 truncate">{st === 'needs_redo' ? 'Redo lab' : 'Lab'}: {l.title}</span><span className="text-xs tabular-nums text-zinc-500">{fmtDur(l.durationSec)}</span></li>; })}
+          </ul>
           <div className="mt-4 flex flex-wrap gap-2">
             <button onClick={() => setStartedAt(Timestamp.now())} className={btnPrimary}>Start Today’s Session</button>
             {course?.playlistUrl && <a href={course.playlistUrl} target="_blank" rel="noreferrer" className={btnGhost}>Free YouTube playlist</a>}</div>
@@ -110,7 +115,7 @@ function Session({ lesson }: { lesson: Lesson }) {
             </Card>)}
           <Card title="4. Wrap-up">
             <div className="space-y-3 text-sm">
-              <div><label htmlFor="min" className="text-zinc-400">Minutes studied</label>
+              <div><label htmlFor="min" className="block text-zinc-400">Minutes studied</label>
                 <input id="min" type="number" min="0" value={minutes} onChange={(e) => setMinutes(e.target.value)} className={ta + ' mt-1 !w-28'} /></div>
               <fieldset><legend className="text-zinc-400">Confidence</legend>
                 <div className="mt-1 flex gap-2">{[1, 2, 3, 4, 5].map((n) => (
