@@ -48,6 +48,8 @@ export interface LabProgress {
   type: 'lab'; labId: string; lessonId: string; certificationId: string; status: LabStatus; assistance: LabAssistance;
   confidence: number | null; timeSpentMin: number | null; notes: string;
   attemptedAt: Timestamp | null; completedAt: Timestamp | null; updatedAt: Timestamp;
+  /** XP is awarded once per lab ever, so toggling status can't farm it. */
+  xpAwarded?: { lab?: boolean; independent?: boolean };
 }
 export type ProgressDoc = LessonProgress | LabProgress;
 
@@ -63,5 +65,37 @@ export interface StudySession {
   /** Local calendar date (YYYY-MM-DD) of completion. */
   localDate: string;
 }
+/** users/{uid}/reviewDays/{YYYY-MM-DD}: guard so the 'review session' XP is awarded once per local day. */
+export interface ReviewDay { date: string; completedAt: Timestamp; lessonId: string }
 /** users/{uid}/ankiDays/{YYYY-MM-DD}: existence = Anki done that local day (also the XP guard). */
 export interface AnkiDay { date: string; completedAt: Timestamp; lessonId: string }
+
+// ---------- Topics & blueprint (shared reference data) ----------
+export interface Topic { id: string; certificationId: string; title: string; order: number; lessonIds: string[]; objectiveCodes: string[]; basis: string }
+export interface BlueprintDomain { id: string; code: string; title: string; weight: number }
+export interface Blueprint {
+  id: string; certificationId: string; examCode: string; version: string; title: string; status: string; examMinutes: number;
+  effectiveFrom: string | null; retiresOn: string | null; nextVersionStartsOn: string | null;
+  domains: BlueprintDomain[]; sourceUrl: string; releaseNotesUrl: string; reviewFlags: string[];
+}
+export interface BlueprintObjective {
+  id: string; blueprintId: string; domainCode: string; code: string; level: 'objective' | 'sub'; parentCode: string | null;
+  text: string; order: number; v11Change: 'added' | 'modified' | null; changeNote: string | null;
+}
+export interface ObjectiveMapping {
+  id: string; blueprintId: string; objectiveId: string; objectiveCode: string; lessonId: string; itemId: string;
+  itemKind: 'lecture' | 'lab'; confidence: 'high' | 'needs_review'; basis: string; source: string; reviewed: boolean; note?: string;
+}
+
+// ---------- More personal data ----------
+/** users/{uid}/topicProgress/{topicId}: manual confidence plus denormalized practice-exam misses (so Dashboard needs no exam reads). */
+export interface TopicProgress { topicId: string; certificationId: string; confidence: number | null; missCount: number; lastMissedAt: Timestamp | null; updatedAt: Timestamp }
+/** users/{uid}/practiceExams/{autoId} */
+export interface PracticeExam {
+  id: string; certificationId: string; provider: string; examName: string; scorePercent: number; takenOn: string;
+  notes: string; missedTopicIds: string[]; createdAt: Timestamp;
+}
+/** users/{uid}/workApplications/{autoId} */
+export interface WorkApplication {
+  id: string; certificationId: string; date: string; title: string; situation: string; knowledgeApplied: string; topicId: string | null; createdAt: Timestamp;
+}

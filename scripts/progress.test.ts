@@ -36,3 +36,35 @@ assert.equal(lessonState(multi, mm).lecturesDone, 2, 'legacy lectureCompleted =>
 const cc = courseCompletion([multi], mm);
 assert.deepEqual([cc.lectures, cc.lectureTotal], [2, 2], 'counts lecture items, not lecture-days');
 console.log('multi-lecture tests passed');
+
+// ---- blueprint coverage + topics ----
+import { blueprintCoverage } from '../src/lib/blueprint';
+import { topicState } from '../src/lib/topics';
+import { readFileSync } from 'node:fs';
+const objs = JSON.parse(readFileSync('seed/blueprint-objectives.json', 'utf8'));
+const maps = JSON.parse(readFileSync('seed/lesson-objective-mappings.json', 'utf8'));
+assert.equal(objs.filter((o: any) => o.level === 'objective').length, 53, '53 top-level v1.1 objectives');
+const bl: Lesson = { ...L('ccna-jeremy-day-23', 23, true, ['ccna-jeremy-day-23-lab-1']), lectures: [{ id: 'ccna-jeremy-day-23-lec-1', title: 'EtherChannel', kind: 'lecture', durationSec: 60, url: null, youtubeUrl: null, ccnaV11Addition: null, reviewFlags: [] }] };
+const lm = new Map([[bl.id, bl]]);
+let cov = blueprintCoverage(objs, maps, lm, new Map());
+assert.equal(cov.rows.find((r) => r.objective.code === '2.4')!.status, 'not_started');
+assert.equal(cov.rows.find((r) => r.objective.code === '1.10')!.status, 'no_content', 'unmapped objective is a gap');
+let p2: ProgressMap = new Map<string, any>([[bl.id, { type: 'lesson', completedLectureIds: ['ccna-jeremy-day-23-lec-1'] }]]);
+assert.equal(blueprintCoverage(objs, maps, lm, p2).rows.find((r) => r.objective.code === '2.4')!.status, 'partial');
+p2.set('ccna-jeremy-day-23-lab-1', { type: 'lab', status: 'needs_redo' } as any);
+assert.equal(blueprintCoverage(objs, maps, lm, p2).rows.find((r) => r.objective.code === '2.4')!.status, 'partial', 'needs_redo lab does not cover');
+p2.set('ccna-jeremy-day-23-lab-1', { type: 'lab', status: 'completed' } as any);
+assert.equal(blueprintCoverage(objs, maps, lm, p2).rows.find((r) => r.objective.code === '2.4')!.status, 'covered');
+assert.ok(cov.rows.filter((r) => r.status !== 'no_content').every((r) => r.high.length > 0), 'needs_review alone never counts as content');
+
+const topic = { id: 't', certificationId: 'c', title: 'T', order: 1, lessonIds: ['d1'], objectiveCodes: [], basis: '' };
+const lp1: ProgressMap = new Map<string, any>([['d1', { type: 'lesson', confidence: 2 }]]);
+const tl = new Map(lessons.map((l) => [l.id, l]));
+assert.equal(topicState(topic, undefined, tl, new Map()).status, 'unrated');
+assert.equal(topicState(topic, undefined, tl, lp1).status, 'needs_review', 'derived from lesson confidence 2');
+assert.equal(topicState(topic, { confidence: 4 } as any, tl, lp1).status, 'strong', 'manual rating wins');
+assert.equal(topicState(topic, { confidence: 3 } as any, tl, lp1).status, 'review_soon');
+assert.equal(topicState(topic, { confidence: 3, missCount: 1 } as any, tl, lp1).status, 'needs_review', 'exam miss lifts a 3 to needs review');
+assert.equal(topicState(topic, { confidence: 5, missCount: 2 } as any, tl, lp1).status, 'strong', 'a 5 stays strong');
+assert.ok(topicState(topic, { confidence: 2, missCount: 2 } as any, tl, lp1).priority > topicState(topic, { confidence: 2 } as any, tl, lp1).priority);
+console.log('blueprint + topic tests passed');

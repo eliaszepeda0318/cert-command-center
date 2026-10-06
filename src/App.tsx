@@ -7,7 +7,13 @@ import Dashboard from './pages/Dashboard';
 import Study from './pages/Study';
 import Roadmap from './pages/Roadmap';
 import Settings from './pages/Settings';
-import Placeholder from './pages/Placeholder';
+import Labs from './pages/Labs';
+import Topics from './pages/Topics';
+import Blueprint from './pages/Blueprint';
+import History from './pages/History';
+import Notes from './pages/Notes';
+import Readiness from './pages/Readiness';
+import Applied from './pages/Applied';
 
 function SignIn() {
   const { signIn, error } = useAuth();
@@ -23,8 +29,6 @@ function SignIn() {
   );
 }
 
-const later = (title: string, stage: string) => <Placeholder title={title} stage={stage} />;
-
 export default function App() {
   const { user, loading } = useAuth();
   if (loading) return <Spinner />;
@@ -37,13 +41,13 @@ export default function App() {
           <Route path="study" element={<Study />} />
           <Route path="study/:lessonId" element={<Study />} />
           <Route path="roadmap" element={<Roadmap />} />
-          <Route path="labs" element={later('Labs', 'Stage 2')} />
-          <Route path="topics" element={later('Topics', 'Stage 2')} />
-          <Route path="blueprint" element={later('Blueprint', 'Stage 3')} />
-          <Route path="history" element={later('History', 'Stage 2')} />
-          <Route path="notes" element={later('Notes', 'Stage 2')} />
-          <Route path="readiness" element={later('Exam Readiness', 'Stage 4')} />
-          <Route path="applied" element={later('Applied at Work', 'Stage 4')} />
+          <Route path="labs" element={<Labs />} />
+          <Route path="topics" element={<Topics />} />
+          <Route path="blueprint" element={<Blueprint />} />
+          <Route path="history" element={<History />} />
+          <Route path="notes" element={<Notes />} />
+          <Route path="readiness" element={<Readiness />} />
+          <Route path="applied" element={<Applied />} />
           <Route path="settings" element={<Settings />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>

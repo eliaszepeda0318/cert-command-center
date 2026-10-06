@@ -57,11 +57,25 @@ docs.push({ path: `courses/${courseId}`, data: {
   id: courseId, certificationId: certId, title: cur.title, playlistUrl: cur.playlistUrl,
   lessonCount: lessonIds.length, labCount: labIds.length, contentVersion: `${cur.version}-${hash('ccna-jeremy-curriculum.json')}` } });
 
-// Blueprint (optional until imported): blueprints, objectives, lesson->objective mappings
-for (const [file, coll] of [['blueprints.json', 'blueprints'], ['blueprint-objectives.json', 'blueprintObjectives'], ['lesson-objective-mappings.json', 'lessonObjectiveMappings']] as const) {
+// Topics, then blueprint (optional until imported): blueprints, objectives, lesson->objective mappings
+for (const [file, coll] of [['topics.json', 'topics'], ['blueprints.json', 'blueprints'], ['blueprint-objectives.json', 'blueprintObjectives'], ['lesson-objective-mappings.json', 'lessonObjectiveMappings']] as const) {
   if (!existsSync(seedPath(file))) { console.log(`(skip) seed/${file} not found`); continue; }
   for (const row of readJson<{ id: string }[]>(file)) docs.push({ path: `${coll}/${row.id}`, data: row as unknown as Record<string, unknown> });
 }
+
+// Referential integrity: bad seed data should fail here, not silently in the app.
+const ids = (c: string) => new Set(docs.filter((d) => d.path.startsWith(c + '/')).map((d) => d.path.split('/')[1]));
+const lessonSet = ids('lessons'), labSet = ids('labs'), objSet = ids('blueprintObjectives');
+const lectureSet = new Set(docs.filter((d) => d.path.startsWith('lessons/')).flatMap((d) => (d.data.lectures as { id: string }[]).map((x) => x.id)));
+const problems: string[] = [];
+for (const d of docs.filter((x) => x.path.startsWith('lessonObjectiveMappings/'))) {
+  const m = d.data as { itemId: string; itemKind: string; lessonId: string; objectiveId: string };
+  if (!objSet.has(m.objectiveId)) problems.push(`${d.path}: unknown objective ${m.objectiveId}`);
+  if (!lessonSet.has(m.lessonId)) problems.push(`${d.path}: unknown lesson ${m.lessonId}`);
+  if (!(m.itemKind === 'lab' ? labSet : lectureSet).has(m.itemId)) problems.push(`${d.path}: unknown ${m.itemKind} ${m.itemId}`);
+}
+for (const d of docs.filter((x) => x.path.startsWith('topics/'))) for (const l of (d.data.lessonIds as string[])) if (!lessonSet.has(l)) problems.push(`${d.path}: unknown lesson ${l}`);
+if (problems.length) { console.error(problems.join('\n')); throw new Error(`Seed integrity check failed (${problems.length} problems)`); }
 
 if (docs.some((d) => d.path.startsWith('users/'))) throw new Error('Seed must never touch users/**');
 

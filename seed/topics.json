@@ -1,0 +1,414 @@
+[
+ {
+  "id": "ccna-200-301-topic-network-devices",
+  "certificationId": "ccna-200-301",
+  "title": "Network devices",
+  "order": 1,
+  "lessonIds": [
+   "ccna-jeremy-day-01",
+   "ccna-jeremy-day-02"
+  ],
+  "objectiveCodes": [
+   "1.1",
+   "1.3"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-ethernet",
+  "certificationId": "ccna-200-301",
+  "title": "Ethernet",
+  "order": 2,
+  "lessonIds": [
+   "ccna-jeremy-day-05",
+   "ccna-jeremy-day-06",
+   "ccna-jeremy-day-09"
+  ],
+  "objectiveCodes": [
+   "1.13",
+   "1.4"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-ipv4",
+  "certificationId": "ccna-200-301",
+  "title": "IPv4",
+  "order": 3,
+  "lessonIds": [
+   "ccna-jeremy-day-07",
+   "ccna-jeremy-day-08",
+   "ccna-jeremy-day-10"
+  ],
+  "objectiveCodes": [
+   "1.6",
+   "1.7"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-ipv6",
+  "certificationId": "ccna-200-301",
+  "title": "IPv6",
+  "order": 4,
+  "lessonIds": [
+   "ccna-jeremy-day-31",
+   "ccna-jeremy-day-32",
+   "ccna-jeremy-day-33"
+  ],
+  "objectiveCodes": [
+   "1.8",
+   "1.9"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-subnetting",
+  "certificationId": "ccna-200-301",
+  "title": "Subnetting",
+  "order": 5,
+  "lessonIds": [
+   "ccna-jeremy-day-13",
+   "ccna-jeremy-day-14",
+   "ccna-jeremy-day-15"
+  ],
+  "objectiveCodes": [
+   "1.6"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-vlans",
+  "certificationId": "ccna-200-301",
+  "title": "VLANs",
+  "order": 6,
+  "lessonIds": [
+   "ccna-jeremy-day-16",
+   "ccna-jeremy-day-17",
+   "ccna-jeremy-day-18"
+  ],
+  "objectiveCodes": [
+   "2.1"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-trunking",
+  "certificationId": "ccna-200-301",
+  "title": "Trunking",
+  "order": 7,
+  "lessonIds": [
+   "ccna-jeremy-day-17",
+   "ccna-jeremy-day-19"
+  ],
+  "objectiveCodes": [
+   "2.2"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-stp",
+  "certificationId": "ccna-200-301",
+  "title": "STP",
+  "order": 8,
+  "lessonIds": [
+   "ccna-jeremy-day-20",
+   "ccna-jeremy-day-21",
+   "ccna-jeremy-day-22"
+  ],
+  "objectiveCodes": [
+   "2.5"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-etherchannel",
+  "certificationId": "ccna-200-301",
+  "title": "EtherChannel",
+  "order": 9,
+  "lessonIds": [
+   "ccna-jeremy-day-23"
+  ],
+  "objectiveCodes": [
+   "2.4"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-static-routing",
+  "certificationId": "ccna-200-301",
+  "title": "Static & dynamic routing",
+  "order": 10,
+  "lessonIds": [
+   "ccna-jeremy-day-11",
+   "ccna-jeremy-day-12",
+   "ccna-jeremy-day-24",
+   "ccna-jeremy-day-25"
+  ],
+  "objectiveCodes": [
+   "3.1",
+   "3.2",
+   "3.3"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-ospf",
+  "certificationId": "ccna-200-301",
+  "title": "OSPF",
+  "order": 11,
+  "lessonIds": [
+   "ccna-jeremy-day-26",
+   "ccna-jeremy-day-27",
+   "ccna-jeremy-day-28"
+  ],
+  "objectiveCodes": [
+   "3.4"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-fhrp",
+  "certificationId": "ccna-200-301",
+  "title": "First hop redundancy",
+  "order": 12,
+  "lessonIds": [
+   "ccna-jeremy-day-29"
+  ],
+  "objectiveCodes": [
+   "3.5"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-acls",
+  "certificationId": "ccna-200-301",
+  "title": "ACLs",
+  "order": 13,
+  "lessonIds": [
+   "ccna-jeremy-day-34",
+   "ccna-jeremy-day-35"
+  ],
+  "objectiveCodes": [
+   "5.6"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-nat",
+  "certificationId": "ccna-200-301",
+  "title": "NAT",
+  "order": 14,
+  "lessonIds": [
+   "ccna-jeremy-day-44",
+   "ccna-jeremy-day-45"
+  ],
+  "objectiveCodes": [
+   "4.1"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-dhcp",
+  "certificationId": "ccna-200-301",
+  "title": "DHCP",
+  "order": 15,
+  "lessonIds": [
+   "ccna-jeremy-day-39",
+   "ccna-jeremy-day-50"
+  ],
+  "objectiveCodes": [
+   "4.3",
+   "4.6"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-dns",
+  "certificationId": "ccna-200-301",
+  "title": "DNS",
+  "order": 16,
+  "lessonIds": [
+   "ccna-jeremy-day-38"
+  ],
+  "objectiveCodes": [
+   "4.3"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-ip-services",
+  "certificationId": "ccna-200-301",
+  "title": "IP services (NTP, SNMP, syslog, SSH, FTP/TFTP, CDP/LLDP)",
+  "order": 17,
+  "lessonIds": [
+   "ccna-jeremy-day-36",
+   "ccna-jeremy-day-37",
+   "ccna-jeremy-day-40",
+   "ccna-jeremy-day-41",
+   "ccna-jeremy-day-42",
+   "ccna-jeremy-day-43"
+  ],
+  "objectiveCodes": [
+   "4.2",
+   "4.4",
+   "4.5",
+   "4.8",
+   "4.9",
+   "2.3"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-tcp-udp",
+  "certificationId": "ccna-200-301",
+  "title": "TCP & UDP",
+  "order": 18,
+  "lessonIds": [
+   "ccna-jeremy-day-30"
+  ],
+  "objectiveCodes": [
+   "1.5"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-qos",
+  "certificationId": "ccna-200-301",
+  "title": "QoS",
+  "order": 19,
+  "lessonIds": [
+   "ccna-jeremy-day-46",
+   "ccna-jeremy-day-47"
+  ],
+  "objectiveCodes": [
+   "4.7"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-virtualization-cloud",
+  "certificationId": "ccna-200-301",
+  "title": "Virtualization & cloud",
+  "order": 20,
+  "lessonIds": [
+   "ccna-jeremy-day-54"
+  ],
+  "objectiveCodes": [
+   "1.12",
+   "1.2"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-wireless",
+  "certificationId": "ccna-200-301",
+  "title": "Wireless",
+  "order": 21,
+  "lessonIds": [
+   "ccna-jeremy-day-55",
+   "ccna-jeremy-day-56",
+   "ccna-jeremy-day-57",
+   "ccna-jeremy-day-58"
+  ],
+  "objectiveCodes": [
+   "1.11",
+   "2.6",
+   "2.7",
+   "2.9",
+   "5.9",
+   "5.10"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-network-security",
+  "certificationId": "ccna-200-301",
+  "title": "Network security",
+  "order": 22,
+  "lessonIds": [
+   "ccna-jeremy-day-48",
+   "ccna-jeremy-day-49",
+   "ccna-jeremy-day-50",
+   "ccna-jeremy-day-51"
+  ],
+  "objectiveCodes": [
+   "5.1",
+   "5.2",
+   "5.4",
+   "5.7"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-automation",
+  "certificationId": "ccna-200-301",
+  "title": "Automation",
+  "order": 23,
+  "lessonIds": [
+   "ccna-jeremy-day-59",
+   "ccna-jeremy-day-62",
+   "ccna-jeremy-day-63"
+  ],
+  "objectiveCodes": [
+   "6.1",
+   "6.2",
+   "6.3",
+   "6.6"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-apis",
+  "certificationId": "ccna-200-301",
+  "title": "APIs & data formats",
+  "order": 24,
+  "lessonIds": [
+   "ccna-jeremy-day-60",
+   "ccna-jeremy-day-61"
+  ],
+  "objectiveCodes": [
+   "6.5",
+   "6.7"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ },
+ {
+  "id": "ccna-200-301-topic-ai-network-ops",
+  "certificationId": "ccna-200-301",
+  "title": "AI/network operations",
+  "order": 25,
+  "lessonIds": [
+   "ccna-jeremy-day-59"
+  ],
+  "objectiveCodes": [
+   "6.4"
+  ],
+  "basis": "lesson-title-match",
+  "source": "claude-title-analysis"
+ }
+]

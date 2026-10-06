@@ -1,0 +1,60 @@
+[
+ {
+  "id": "ccna-200-301-v1.1",
+  "certificationId": "ccna-200-301",
+  "examCode": "200-301",
+  "version": "1.1",
+  "title": "CCNA 200-301 v1.1",
+  "status": "active",
+  "examMinutes": 120,
+  "effectiveFrom": null,
+  "retiresOn": "2027-02-02",
+  "nextVersionStartsOn": "2027-02-03",
+  "domains": [
+   {
+    "id": "ccna-200-301-v1.1-d1",
+    "code": "1",
+    "title": "Network Fundamentals",
+    "weight": 20
+   },
+   {
+    "id": "ccna-200-301-v1.1-d2",
+    "code": "2",
+    "title": "Network Access",
+    "weight": 20
+   },
+   {
+    "id": "ccna-200-301-v1.1-d3",
+    "code": "3",
+    "title": "IP Connectivity",
+    "weight": 25
+   },
+   {
+    "id": "ccna-200-301-v1.1-d4",
+    "code": "4",
+    "title": "IP Services",
+    "weight": 10
+   },
+   {
+    "id": "ccna-200-301-v1.1-d5",
+    "code": "5",
+    "title": "Security Fundamentals",
+    "weight": 15
+   },
+   {
+    "id": "ccna-200-301-v1.1-d6",
+    "code": "6",
+    "title": "Automation and Programmability",
+    "weight": 10
+   }
+  ],
+  "sourceUrl": "https://learningcontent.cisco.com/documents/marketing/exam-topics/200-301-CCNA-v1.1.pdf",
+  "releaseNotesUrl": "https://learningcontent.cisco.com/documents/marketing/exam-topics/CCNA_1_1_release_notes.pdf",
+  "reviewFlags": [
+   "effectiveFrom not confirmed from a Cisco source in this import (only third-party sources state 2024-08-20); left null.",
+   "retiresOn / nextVersionStartsOn (v2.0) are as stated by the owner from Cisco communications; not in the fetched exam-topics PDF.",
+   "Objective text was transcribed from Cisco's official v1.1 PDF via a page-fetch tool (one request per domain), not a direct file download (shell egress to learningcontent.cisco.com is blocked). Spot-check against the PDF before relying on exact wording."
+  ],
+  "importedAt": "2026-10-06"
+ }
+]

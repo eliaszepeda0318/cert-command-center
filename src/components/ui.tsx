@@ -38,3 +38,20 @@ export const ErrorState = ({ message }: { message: string }) => (
 export const btn = 'inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors disabled:opacity-50';
 export const btnPrimary = `${btn} bg-sky-600 text-white hover:bg-sky-500`;
 export const btnGhost = `${btn} border border-zinc-700 text-zinc-200 hover:bg-zinc-800`;
+
+export const field = 'w-full rounded-md border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm text-zinc-100 placeholder:text-zinc-600';
+export const Label = ({ htmlFor, children }: { htmlFor?: string; children: ReactNode }) => <label htmlFor={htmlFor} className="mb-1 block text-xs text-zinc-400">{children}</label>;
+
+export function ConfidencePicker({ value, onChange, label }: { value: number | null; onChange: (n: number | null) => void; label: string }) {
+  return (
+    <div role="group" aria-label={label} className="flex gap-1.5">
+      {[1, 2, 3, 4, 5].map((n) => (
+        <button key={n} type="button" aria-pressed={value === n} aria-label={`${label}: ${n} of 5`} onClick={() => onChange(value === n ? null : n)}
+          className={`h-8 w-8 rounded-md border text-sm ${value === n ? 'border-sky-500 bg-sky-950 text-sky-300' : 'border-zinc-700 text-zinc-300 hover:bg-zinc-800'}`}>{n}</button>
+      ))}
+    </div>
+  );
+}
+export const PageTitle = ({ title, sub }: { title: string; sub?: string }) => (
+  <div className="mb-4"><h1 className="text-xl font-semibold">{title}</h1>{sub && <p className="text-sm text-zinc-500">{sub}</p>}</div>
+);

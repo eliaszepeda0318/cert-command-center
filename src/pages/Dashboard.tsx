@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import { useAppData } from '../context/AppDataContext';
 import { completedLectureIds, courseCompletion, fmtMin, labProg, labsOf, levelFromXp, lessonProg, nextLesson, requiredLectures, weeklyMinutes, XP_PER_LEVEL } from '../lib/progress';
+import { topicState } from '../lib/topics';
 import { Card, EmptyState, Pill, ProgressBar, Stat, btnPrimary } from '../components/ui';
 
 export default function Dashboard() {
-  const { activeCert, lessons, labsById, progress, sessions, profile, ankiDoneToday } = useAppData();
+  const { activeCert, lessons, labsById, lessonsById, progress, sessions, profile, ankiDoneToday, topics, topicProgress } = useAppData();
   if (!profile) return null;
   if (!lessons.length) return <EmptyState title="No curriculum loaded" body="Run `npm run seed` to load the CCNA curriculum, then refresh." />;
   const c = courseCompletion(lessons, progress);
@@ -17,6 +18,7 @@ export default function Dashboard() {
     ...requiredLectures(next).map((x) => ({ k: x.id, label: `Lecture: ${x.title}`, done: done.has(x.id) })),
     ...labsOf(next, labsById).map((l) => ({ k: l.id, label: `Lab: ${l.title}`, done: labProg(progress, l.id)?.status === 'completed' })),
   ] : [];
+  const weak = topics.map((t) => ({ t, s: topicState(t, topicProgress.get(t.id), lessonsById, progress) })).filter((x) => x.s.status === 'needs_review').sort((a, b) => b.s.priority - a.s.priority).slice(0, 5);
   const xp = profile.stats.xp;
   return (
     <div className="space-y-4">
@@ -45,7 +47,11 @@ export default function Dashboard() {
               <span className={t.done ? 'text-zinc-500 line-through' : ''}>{t.label}</span></li>))}</ul>
             : <p className="text-sm text-zinc-500">Nothing left. Nice work.</p>}
         </Card>
-        <Card title="Weak topics"><EmptyState title="No topics rated yet" body="Topic confidence arrives in Stage 2; topics rated 1–2 will surface here." /></Card>
+        <Card title="Weak topics" action={<Link to="/topics" className="text-xs text-sky-400 hover:underline">All topics</Link>}>
+          {weak.length ? <ul className="space-y-2 text-sm">{weak.map(({ t, s }) => (
+            <li key={t.id} className="flex items-center justify-between gap-2"><span className="truncate">{t.title}</span>
+              <span className="flex shrink-0 gap-1.5">{s.missCount > 0 && <Pill tone="bad">Missed {s.missCount}x</Pill>}<Pill tone="bad">{s.effective != null ? `${s.effective}/5` : 'Needs review'}</Pill></span></li>))}</ul>
+            : <p className="text-sm text-zinc-500">No topics need review. Rate topics 1–5 on the Topics page.</p>}</Card>
       </div>
       <Card title="Recent study activity">
         {sessions.length ? <ul className="divide-y divide-zinc-800 text-sm">{sessions.slice(0, 5).map((x) => (

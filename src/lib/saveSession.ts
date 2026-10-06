@@ -1,6 +1,6 @@
 import { collection, doc, increment, runTransaction, serverTimestamp, Timestamp } from 'firebase/firestore';
 import { db } from './firebase';
-import { completedLectureIds, labProg, lessonProg, localDateKey, requiredLectures, XP, type ProgressMap } from './progress';
+import { completedLectureIds, labProg, lessonProg, lessonState, localDateKey, requiredLectures, XP, type ProgressMap } from './progress';
 import type { Lab, LabAssistance, LabStatus, Lesson } from '../types';
 
 export interface SessionInput {
@@ -20,12 +20,17 @@ export async function saveSession(uid: string, lesson: Lesson, labs: Lab[], prog
   const completedAt = Timestamp.now();
   const localDate = localDateKey(completedAt.toDate());
   const dayRef = doc(db, 'users', uid, 'ankiDays', localDate);
+  const reviewRef = doc(db, 'users', uid, 'reviewDays', localDate);
+  const wasComplete = lessonState(lesson, progress).complete;
   const prev = lessonProg(progress, lesson.id);
   const req = requiredLectures(lesson);
 
   await runTransaction(db, async (tx) => {
-    const firstAnkiToday = input.ankiDone && !(await tx.get(dayRef)).exists();
-    let xp = firstAnkiToday ? XP.anki : 0;
+    const [ankiSnap, reviewSnap] = await Promise.all([tx.get(dayRef), tx.get(reviewRef)]);
+    const firstAnkiToday = input.ankiDone && !ankiSnap.exists();
+    // "Review session": a session on a day that was already complete, at most once per local day.
+    const reviewToday = wasComplete && input.minutes > 0 && !reviewSnap.exists();
+    let xp = (firstAnkiToday ? XP.anki : 0) + (reviewToday ? XP.review : 0);
 
     const before = completedLectureIds(lesson, prev);
     const after = new Set(before);
@@ -42,11 +47,13 @@ export async function saveSession(uid: string, lesson: Lesson, labs: Lab[], prog
       if (status !== 'completed') labsAllDone = false;
       if (!s || (b?.status === status && b?.assistance === assistance)) continue;
       if (status !== 'not_started') touchedLabIds.push(lab.id);
-      if (status === 'completed' && b?.status !== 'completed') { xp += XP.lab; if (assistance === 'independent') xp += XP.labIndependent; }
+      const award = { lab: !!b?.xpAwarded?.lab, independent: !!b?.xpAwarded?.independent };
+      if (status === 'completed' && !award.lab) { xp += XP.lab; award.lab = true; }
+      if (status === 'completed' && assistance === 'independent' && !award.independent) { xp += XP.labIndependent; award.independent = true; }
       tx.set(doc(db, 'users', uid, 'progress', lab.id), {
         type: 'lab', labId: lab.id, lessonId: lesson.id, certificationId: lesson.certificationId, status, assistance,
         attemptedAt: b?.attemptedAt ?? (status === 'not_started' ? null : completedAt),
-        completedAt: status === 'completed' ? b?.completedAt ?? completedAt : null, updatedAt: completedAt,
+        completedAt: status === 'completed' ? b?.completedAt ?? completedAt : null, updatedAt: completedAt, xpAwarded: award,
       }, { merge: true });
     }
 
@@ -68,6 +75,7 @@ export async function saveSession(uid: string, lesson: Lesson, labs: Lab[], prog
       startedAt: input.startedAt, completedAt, localDate,
     });
     if (firstAnkiToday) tx.set(dayRef, { date: localDate, completedAt, lessonId: lesson.id });
+    if (reviewToday) tx.set(reviewRef, { date: localDate, completedAt, lessonId: lesson.id });
     tx.update(doc(db, 'users', uid), {
       'stats.xp': increment(xp), 'stats.totalStudyMinutes': increment(input.minutes),
       'stats.ankiSessions': increment(firstAnkiToday ? 1 : 0), updatedAt: serverTimestamp(),

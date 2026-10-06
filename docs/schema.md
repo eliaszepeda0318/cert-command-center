@@ -8,10 +8,10 @@
 | `modules` | (unused in v1) | lessons carry `moduleId: null`; no official module grouping was verified |
 | `lessons` | `ccna-jeremy-day-01` ... `ccna-jeremy-mega-lab` | certificationId, courseId, order, dayNumber, title, altTitles[], lectures[] (embedded), labIds[], reviewFlags[] |
 | `labs` | `ccna-jeremy-day-01-lab-1` | lessonId, courseId, certificationId, order, title, url, durationSec, downloadUrl (null), reviewFlags[] |
-| `blueprints` (Stage 3) | `ccna-200-301-v1.1`, later `ccna-200-301-v2.0` | certificationId, version, effectiveFrom, retiresOn, status |
-| `blueprintObjectives` (Stage 3) | `ccna-200-301-v1.1-1.1` | blueprintId, domain, weight, code, text |
-| `lessonObjectiveMappings` (Stage 3) | `<blueprintId>__<lessonId>` | blueprintId, lessonId/labIds, objectiveIds[], confidence (`verified`/`needs_review`) |
-| `topics` (Stage 2) | | per-certification topic list |
+| `blueprints` | `ccna-200-301-v1.1`, later `ccna-200-301-v2.0` | certificationId, version, effectiveFrom, retiresOn, status |
+| `blueprintObjectives` | `ccna-200-301-v1.1__1.1` | blueprintId, domainCode, code, parentCode, text, v11Change/changeNote |
+| `lessonObjectiveMappings` | `<blueprintId>__<itemId>__<code>` | blueprintId, objectiveId, objectiveCode, lessonId, itemId, itemKind (`lecture`/`lab`), confidence (`high`/`needs_review`), basis, source, reviewed |
+| `topics` | | certificationId, title, lessonIds[], labIds[] (per-certification topic list) |
 
 Blueprint versioning: objectives and mappings are keyed by `blueprintId`, so v2.0 is added as new
 docs. Nothing in a user's personal data references an objective id, and blueprint coverage is
@@ -23,6 +23,12 @@ docs. Nothing in a user's personal data references an objective id, and blueprin
 - `users/{uid}/progress/{lessonId}` fields: `completedLectureIds[]` (authoritative, stable lecture item ids), `lectureCompleted` (derived; legacy docs with only this are read as "all required lectures done"), `lastAnkiDate` (metadata only).
 - `users/{uid}/ankiDays/{YYYY-MM-DD}`: existence = Anki done that local day. Written inside the save transaction, which makes Anki XP once-per-day.
 - `users/{uid}/studySessions/{autoId}`: one per saved session (lessonId, durationMin, activities, confidence, notes, `startedAt` = when Start was clicked, `completedAt` = when saved, `localDate`). Dashboard queries the last 35 days by `completedAt`; History uses its own paginated query.
-- Later stages: `practiceExams`, `notes`, `workApplications`, `topicProgress` (same owner-only rule already covers them).
+- `users/{uid}/reviewDays/{YYYY-MM-DD}`: existence = review-session XP already awarded that day.
+- `users/{uid}/topicProgress/{topicId}`: `confidence` 1-5 (manual), `missCount`/`lastMissedAt` (denormalized from practice exams).
+- `users/{uid}/practiceExams/{autoId}`: provider, examName, scorePercent, takenOn, notes, missedTopicIds[]. Saving increments `missCount` on missed topics in the same batch.
+- `users/{uid}/workApplications/{autoId}`: date, title, situation, knowledgeApplied, optional topicId.
+- Lesson notes (clicked/confused/commands/general) live in `progress/{lessonId}.notes`; lab notes in `progress/{labId}.notes`. There is no separate notes collection.
+- `progress/{labId}.xpAwarded {lab, independent}` guards lab XP to once per lab, ever.
+(All covered by the single owner-only rule on `users/{uid}/**`.)
 
 All timestamps are Firestore `Timestamp` (`serverTimestamp()` for user doc, `Timestamp.now()` inside batches).

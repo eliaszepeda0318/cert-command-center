@@ -1,7 +1,7 @@
 import type { Lab, Lesson, LabProgress, LessonProgress, ProgressDoc, StudySession } from '../types';
 
 export type ProgressMap = Map<string, ProgressDoc>;
-export const XP = { lecture: 25, lab: 40, anki: 10, labIndependent: 10 } as const;
+export const XP = { lecture: 25, lab: 40, anki: 10, labIndependent: 10, review: 10 } as const;
 export const XP_PER_LEVEL = 500;
 export const levelFromXp = (xp: number) => Math.floor(xp / XP_PER_LEVEL) + 1;
 
