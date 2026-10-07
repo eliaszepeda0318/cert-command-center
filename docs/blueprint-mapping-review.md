@@ -32,3 +32,7 @@ Mappings: 156 (95 high, 61 needs_review). Blueprint: ccna-200-301-v1.1.
 - Day 3 lab: OSI Model
 - Day 25 lab: Configuring EIGRP
 - Day 53 lab: GRE Tunnels
+
+
+## Note after the free-YouTube migration
+Stable lecture and lab ids are unchanged, so no mapping needed updating. The only title difference that affects a mapped item is `ccna-jeremy-day-18-lab-1` (free video: "VLANs (Part 3)"; Academy title: "Multilayer Switching"); its mapping to 2.1.c was already `needs_review`.

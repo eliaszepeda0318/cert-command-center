@@ -22,7 +22,8 @@ function unitDone(m: ObjectiveMapping, lessons: Map<string, Lesson>, progress: P
 export function blueprintCoverage(objectives: BlueprintObjective[], mappings: ObjectiveMapping[], lessons: Map<string, Lesson>, progress: ProgressMap) {
   const top = objectives.filter((o) => o.level === 'objective').sort((a, b) => a.order - b.order);
   const byTop = new Map<string, ObjectiveMapping[]>();
-  for (const m of mappings) { const k = topCode(m.objectiveCode); byTop.set(k, [...(byTop.get(k) ?? []), m]); }
+  const optional = (m: ObjectiveMapping) => m.itemKind === 'lecture' && lessons.get(m.lessonId)?.lectures.find((x) => x.id === m.itemId)?.resourceAccess === 'paid_optional';
+  for (const m of mappings) { if (optional(m)) continue; const k = topCode(m.objectiveCode); byTop.set(k, [...(byTop.get(k) ?? []), m]); }
   const rows: ObjectiveCoverage[] = top.map((o) => {
     const ms = byTop.get(o.code) ?? [];
     const uniq = (c: 'high' | 'needs_review'): Unit[] => {

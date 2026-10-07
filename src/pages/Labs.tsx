@@ -3,7 +3,7 @@ import { useAuth } from '../context/AuthContext';
 import { useAppData } from '../context/AppDataContext';
 import { saveLab } from '../lib/data';
 import { fmtDur, labProg } from '../lib/progress';
-import { ConfidencePicker, EmptyState, ErrorState, Label, PageTitle, Pill, btnPrimary, field } from '../components/ui';
+import { ConfidencePicker, EmptyState, ErrorState, ExtLink, Label, PageTitle, Pill, btnPrimary, field } from '../components/ui';
 import type { Lab, LabAssistance, LabProgress, LabStatus, Lesson } from '../types';
 
 type Filter = 'all' | 'not_started' | 'completed' | 'needs_redo' | 'low';
@@ -91,7 +91,10 @@ function LabEditor({ lab, lesson, onDone }: { lab: Lab; lesson: Lesson; onDone: 
       </div>
       <div><Label htmlFor={`nt-${lab.id}`}>Notes</Label><textarea id={`nt-${lab.id}`} rows={2} value={notes} onChange={(e) => setNotes(e.target.value)} className={field} /></div>
       <div className="flex flex-wrap items-center gap-3 text-xs text-zinc-500">
-        {lab.url && <a href={lab.url} target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">Open lab video</a>}
+        {lab.freeYoutubeUrl && <ExtLink href={lab.freeYoutubeUrl}>Open Lab Video</ExtLink>}
+        {lab.labFilesUrl && lab.labFilesAccess === 'free' && <ExtLink href={lab.labFilesUrl}>Get Free Lab Files</ExtLink>}
+        {lab.academyUrl && <ExtLink href={lab.academyUrl} muted>JITL Academy extra (optional)</ExtLink>}
+        {lab.youtubeVerification === 'needs_review' && <Pill tone="warn">Video match needs review</Pill>}
         {p?.attemptedAt && <span>First attempted {p.attemptedAt.toDate().toLocaleDateString()}</span>}
       </div>
       {err && <ErrorState message={err} />}

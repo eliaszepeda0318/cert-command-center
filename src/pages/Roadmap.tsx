@@ -10,7 +10,7 @@ export default function Roadmap() {
   const next = nextLesson(lessons, progress);
   return (
     <div className="space-y-4">
-      <div><h1 className="text-xl font-semibold">Roadmap</h1><p className="text-sm text-zinc-500">{course?.title}</p></div>
+      <div><h1 className="text-xl font-semibold">Roadmap</h1><p className="text-sm text-zinc-500">{course?.title} · free YouTube course</p></div>
       <Card>
         <div className="mb-2 flex justify-between text-sm"><span>{c.daysDone} of {c.daysTotal} days complete</span><span className="tabular-nums">{c.percent}%</span></div>
         <ProgressBar value={c.percent} label="Course completion" />
@@ -28,7 +28,7 @@ export default function Roadmap() {
                   <span className="block truncate text-sm text-zinc-100">{l.title}</span>
                   <span className="text-xs text-zinc-500">{mins ? `${fmtDur(mins)} lecture` : 'Lab only'}{s.labsTotal ? ` · ${s.labsDone}/${s.labsTotal} labs` : ''}</span>
                 </span>
-                {l.reviewFlags.length > 0 && <Pill tone="warn">Review</Pill>}
+                {(l.reviewFlags.length > 0 || l.lectures.some((x) => x.youtubeVerification === 'needs_review')) && <Pill tone="warn">Review</Pill>}
                 {isNext && <Pill tone="info">Next</Pill>}
                 {s.complete ? <Pill tone="good">Complete</Pill> : s.newContentDone ? <Pill tone="warn">Redo lab</Pill> : s.started ? <Pill tone="warn">In progress</Pill> : <Pill>Not started</Pill>}
               </Link>

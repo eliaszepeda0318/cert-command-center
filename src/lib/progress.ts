@@ -9,7 +9,8 @@ export const lessonProg = (m: ProgressMap, id: string) => { const p = m.get(id);
 export const labProg = (m: ProgressMap, id: string) => { const p = m.get(id); return p?.type === 'lab' ? (p as LabProgress) : undefined; };
 export const isLabDone = (p?: LabProgress) => p?.status === 'completed';
 
-export const requiredLectures = (l: Lesson) => l.lectures.filter((x) => x.kind === 'lecture');
+/** Required = a real lecture on the free path. Extras and any paid_optional item never block progression. */
+export const requiredLectures = (l: Lesson) => l.lectures.filter((x) => x.kind === 'lecture' && x.resourceAccess !== 'paid_optional');
 /** Completed lecture ids. Legacy docs with only `lectureCompleted: true` count as all required lectures done. */
 export function completedLectureIds(lesson: Lesson, lp?: LessonProgress): Set<string> {
   if (!lp) return new Set();

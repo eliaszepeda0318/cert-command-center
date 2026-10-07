@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { useAppData } from '../context/AppDataContext';
 import { completedLectureIds, fmtDur, labProg, labsOf, lessonProg, lessonState, nextLesson, requiredLectures } from '../lib/progress';
 import { saveSession } from '../lib/saveSession';
-import { Card, EmptyState, ErrorState, Pill, btnGhost, btnPrimary } from '../components/ui';
+import { Card, EmptyState, ErrorState, ExtLink, Pill, btnGhost, btnPrimary } from '../components/ui';
 import { Timestamp } from 'firebase/firestore';
 import type { LabAssistance, LabStatus, Lesson } from '../types';
 
@@ -44,6 +44,7 @@ function Session({ lesson }: { lesson: Lesson }) {
   const [err, setErr] = useState<string | null>(null);
 
   const lecs = requiredLectures(lesson);
+  const academy = [...lesson.lectures.map((x) => ({ id: x.id, title: x.title, academyUrl: x.academyUrl, kind: 'lecture' })), ...labs.map((x) => ({ id: x.id, title: x.title, academyUrl: x.academyUrl, kind: 'lab' }))].filter((x) => x.academyUrl);
   const extras = lesson.lectures.filter((l) => l.kind === 'extra');
   const title = lesson.dayNumber != null ? `Day ${lesson.dayNumber}: ${lesson.title}` : lesson.title;
 
@@ -91,12 +92,13 @@ function Session({ lesson }: { lesson: Lesson }) {
                   <li key={x.id} className="flex flex-wrap items-center gap-2">
                     <input type="checkbox" aria-label={`${x.title} completed`} className="h-4 w-4" checked={already || checkedLecs.has(x.id)} disabled={already}
                       onChange={(e) => { const n = new Set(checkedLecs); if (e.target.checked) n.add(x.id); else n.delete(x.id); setCheckedLecs(n); }} />
-                    {x.url ? <a href={x.url} target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">{x.title}</a> : x.title}
+                    <span>{x.title}</span>
+                    {x.freeYoutubeUrl ? <ExtLink href={x.freeYoutubeUrl}>Watch on YouTube</ExtLink> : <Pill tone="warn">No verified video</Pill>}
                     <span className="text-zinc-500">{fmtDur(x.durationSec)}</span>
                     {x.ccnaV11Addition === true && <Pill tone="info">v1.1</Pill>}
                     {x.reviewFlags.length > 0 && <Pill tone="warn">Needs review</Pill>}
                     {already && <span className="text-xs text-zinc-500">recorded</span>}</li>);})}</ul>
-              <p className="mt-2 text-xs text-zinc-600">Teachable links are source references and need a paid enrollment; the same lectures are on the free YouTube playlist.</p>
+              <p className="mt-2 text-xs text-zinc-600">Videos open on Jeremy's free YouTube course.</p>
             </Card>)}
           {labs.length > 0 && (
             <Card title="3. Packet Tracer lab">
@@ -104,7 +106,13 @@ function Session({ lesson }: { lesson: Lesson }) {
                 const s = labState[l.id];
                 return (
                   <li key={l.id} className="text-sm">
-                    <div className="mb-1">{l.url ? <a href={l.url} target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">{l.title}</a> : l.title} <span className="text-zinc-500">{fmtDur(l.durationSec)}</span></div>
+                    <div className="mb-1 flex flex-wrap items-center gap-x-3 gap-y-1">
+                      <span>{l.title}</span>
+                      {l.freeYoutubeUrl ? <ExtLink href={l.freeYoutubeUrl}>Open Lab Video</ExtLink> : <Pill tone="warn">No verified video</Pill>}
+                      {l.labFilesUrl && l.labFilesAccess === 'free' && <ExtLink href={l.labFilesUrl}>Get Free Lab Files</ExtLink>}
+                      <span className="text-zinc-500">{fmtDur(l.durationSec)}</span>
+                      {l.youtubeVerification === 'needs_review' && <Pill tone="warn">Needs review</Pill>}
+                    </div>
                     <div className="flex flex-wrap gap-2">
                       <select aria-label={`${l.title} status`} value={s.status} onChange={(e) => setLabState({ ...labState, [l.id]: { ...s, status: e.target.value as LabStatus } })} className={ta + ' !w-auto'}>
                         {STATUS.map((o) => <option key={o.v} value={o.v}>{o.l}</option>)}</select>
@@ -113,6 +121,11 @@ function Session({ lesson }: { lesson: Lesson }) {
                           <option value="">Independence not set</option><option value="independent">Independently</option><option value="walkthrough">With walkthrough/help</option></select>)}
                     </div></li>);})}</ul>
             </Card>)}
+          {academy.length > 0 && (
+            <details className="rounded-lg border border-zinc-800 bg-zinc-900/30 px-4 py-2 text-xs text-zinc-500">
+              <summary className="cursor-pointer hover:text-zinc-300">JITL Academy extras (optional, paid; never required)</summary>
+              <ul className="mt-2 space-y-1">{academy.map((a) => <li key={a.id}><ExtLink href={a.academyUrl!} muted>{a.kind === 'lab' ? 'JITL Academy extra' : 'JITL Academy version'}: {a.title}</ExtLink></li>)}</ul>
+            </details>)}
           <Card title="4. Wrap-up">
             <div className="space-y-3 text-sm">
               <div><label htmlFor="min" className="block text-zinc-400">Minutes studied</label>

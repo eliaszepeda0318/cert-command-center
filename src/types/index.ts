@@ -3,21 +3,42 @@ import type { Timestamp } from 'firebase/firestore';
 // ---------- Shared reference data (read-only for clients; written by seed script) ----------
 export type CertStatus = 'active' | 'coming_later';
 export interface Certification { id: string; title: string; fullTitle: string; status: CertStatus; order: number; activeBlueprintId: string | null }
-export interface Course { id: string; certificationId: string; title: string; playlistUrl: string | null; lessonCount: number; labCount: number; contentVersion: string }
+/** free = usable without paying; paid_optional = supplemental, NEVER required for progression; unverified = could not confirm. */
+export type ResourceAccess = 'free' | 'paid_optional' | 'unverified';
+export type SourceType = 'youtube_free' | 'academy_only';
+export interface FreeResource { id: string; title: string; url: string; access: ResourceAccess; note: string | null; verifiedFrom: string }
+export interface Course {
+  id: string; certificationId: string; title: string; playlistUrl: string | null; lessonCount: number; labCount: number; contentVersion: string;
+  /** Canonical study source for this course. */
+  primarySource?: SourceType; freeResources?: FreeResource[];
+}
+/** Fields shared by lectures and lab videos. The free YouTube video is primary; Academy (Teachable) data is optional metadata. */
+export interface StudyResource {
+  /** Exact free YouTube video URL (null only if no free video could be verified). */
+  freeYoutubeUrl: string | null; youtubeVideoId?: string | null; youtubeTitle?: string; youtubePlaylistPosition?: number;
+  youtubeVerification?: 'verified' | 'needs_review';
+  /** Paid JITL Academy equivalent. Secondary/optional only. */
+  academyUrl: string | null; academyTitle?: string; academyDurationSec?: number | null;
+  sourceType: SourceType; resourceAccess: ResourceAccess;
+}
 
-export interface LectureItem {
+export interface LectureItem extends Partial<StudyResource> {
   id: string; title: string; kind: 'lecture' | 'extra'; durationSec: number | null;
-  url: string | null; youtubeUrl: string | null; ccnaV11Addition: boolean | null; notes?: string; reviewFlags: string[];
+  ccnaV11Addition: boolean | null; notes?: string; reviewFlags: string[];
 }
 /** A "study day". Stable id e.g. ccna-jeremy-day-01. */
 export interface Lesson {
   id: string; certificationId: string; courseId: string; moduleId: string | null; order: number;
   dayNumber: number | null; title: string; altTitles: { source: string; title: string }[];
-  lectures: LectureItem[]; labIds: string[]; reviewFlags: string[];
+  lectures: LectureItem[];
+  /** Required labs (free). Paid-optional labs live in extraLabIds and never count toward completion. */
+  labIds: string[]; extraLabIds?: string[]; reviewFlags: string[];
 }
-export interface Lab {
+export interface Lab extends Partial<StudyResource> {
   id: string; lessonId: string; courseId: string; certificationId: string; order: number; title: string;
-  kind: string; durationSec: number | null; url: string | null; youtubeUrl: string | null; downloadUrl: string | null; reviewFlags: string[];
+  kind: string; durationSec: number | null; reviewFlags: string[];
+  /** Official free lab files/flashcards link (Jeremy's email signup, or the Mega Lab Drive folder). */
+  labFilesUrl?: string | null; labFilesAccess?: ResourceAccess; labFilesVerification?: 'course_level' | 'per_lab';
 }
 
 // ---------- Personal data: users/{uid}/... ----------

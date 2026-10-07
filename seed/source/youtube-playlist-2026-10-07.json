@@ -1,0 +1,891 @@
+{
+ "source": "https://www.youtube.com/playlist?list=PLxbwE86jKRgMpuZuLBivzlM8s2Dk5lXBQ",
+ "owner": "Jeremy's IT Lab",
+ "retrieved": "2026-10-07",
+ "method": "Playlist page data (titles, order, durations) cross-checked per video with YouTube oEmbed (author = Jeremy's IT Lab; title identical)",
+ "videoCount": 126,
+ "videos": [
+  {
+   "pos": 1,
+   "id": "H8W9oMNSuwo",
+   "title": "Free CCNA | Network Devices | Day 1 | CCNA 200-301 Complete Course",
+   "durationSec": 1826,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 2,
+   "id": "6Atw8oMtVTA",
+   "title": "Free CCNA | Anki Flashcards | Day 1 Extra | CCNA 200-301 Complete Course",
+   "durationSec": 896,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 3,
+   "id": "a1Im6GYaSno",
+   "title": "Free CCNA | Packet Tracer Introduction | Day 1 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 918,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 4,
+   "id": "ieTH5lVhNaY",
+   "title": "Free CCNA | Interfaces and Cables | Day 2 | CCNA 200-301 Complete Course",
+   "durationSec": 2152,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 5,
+   "id": "K6Qt23sY68Y",
+   "title": "Free CCNA | Connecting Devices | Day 2 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 333,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 6,
+   "id": "yM-XNq9ADlI",
+   "title": "How the TCP/IP Model Actually Works | CCNA Day 3",
+   "durationSec": 2562,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 7,
+   "id": "7nmYoL0t2tU",
+   "title": "Free CCNA | OSI Model | Day 3 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 485,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 8,
+   "id": "IYbtai7Nu2g",
+   "title": "Free CCNA | Intro to the CLI | Day 4 | CCNA 200-301 Complete Course",
+   "durationSec": 1866,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 9,
+   "id": "SDocmq1c05s",
+   "title": "Free CCNA | Basic Device Security | Day 4 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 626,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 10,
+   "id": "u2n762WG0Vo",
+   "title": "Free CCNA | Ethernet LAN Switching (Part 1) | Day 5 | CCNA 200-301 Complete Course",
+   "durationSec": 2293,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 11,
+   "id": "5q1pqdmdPjo",
+   "title": "Free CCNA | Ethernet LAN Switching (Part 2) | Day 6 | CCNA 200-301 Complete Course",
+   "durationSec": 2021,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 12,
+   "id": "Ig0dSaOQDI8",
+   "title": "Free CCNA | Analyzing Ethernet Switching | Day 6 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 629,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 13,
+   "id": "3ROdsfEUuhs",
+   "title": "Free CCNA | IPv4 Addressing (Part 1) | Day 7 | CCNA 200-301 Complete Course",
+   "durationSec": 2421,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 14,
+   "id": "FiAatRd84XI",
+   "title": "Free CCNA | IPv4 Addressing (Part 2) | Day 8 | CCNA 200-301 Complete Course",
+   "durationSec": 1842,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 15,
+   "id": "e1jbvyMeS5I",
+   "title": "Free CCNA | Configuring IP Addresses | Day 8 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 606,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 16,
+   "id": "cCqluocfQe0",
+   "title": "Free CCNA | Switch Interfaces | Day 9 | CCNA 200-301 Complete Course",
+   "durationSec": 1948,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 17,
+   "id": "rzDb5DoBKRk",
+   "title": "Free CCNA | Configuring Interfaces | Day 9 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 714,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 18,
+   "id": "aQB22y4liXA",
+   "title": "Free CCNA | IPv4 Header | Day 10 | CCNA 200-301 Complete Course",
+   "durationSec": 1811,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 19,
+   "id": "aHwAm8GYbn8",
+   "title": "Free CCNA | Routing Fundamentals | Day 11 (part 1) | CCNA 200-301 Complete Course",
+   "durationSec": 1860,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 20,
+   "id": "YCv4-_sMvYE",
+   "title": "Free CCNA | Static Routing | Day 11 (part 2) | CCNA 200-301 Complete Course",
+   "durationSec": 2264,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 21,
+   "id": "XHxOtIav2k8",
+   "title": "Free CCNA | Configuring Static Routes | Day 11 Lab 1 | CCNA 200-301 Complete Course",
+   "durationSec": 749,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 22,
+   "id": "3z8YGEVFTiA",
+   "title": "Free CCNA | Troubleshooting Static Routes | Day 11 Lab 2 | CCNA 200-301 Complete Course",
+   "durationSec": 585,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 23,
+   "id": "4YrYV2io3as",
+   "title": "Free CCNA | The Life of a Packet | Day 12 | CCNA 200-301 Complete Course",
+   "durationSec": 1213,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 24,
+   "id": "bfsEqDeHbpI",
+   "title": "Free CCNA | Life of a Packet | Day 12 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 936,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 25,
+   "id": "bQ8sdpGQu8c",
+   "title": "Free CCNA | Subnetting (Part 1) | Day 13 | CCNA 200-301 Complete Course",
+   "durationSec": 1734,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 26,
+   "id": "IGhd-0di0Qo",
+   "title": "Free CCNA | Subnetting (Part 2) | Day 14 | CCNA 200-301 Complete Course",
+   "durationSec": 1487,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 27,
+   "id": "z-JqCedc9EI",
+   "title": "Free CCNA | Subnetting (Part 3 - VLSM) | Day 15 | CCNA 200-301 Complete Course",
+   "durationSec": 1433,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 28,
+   "id": "Rn_E1Qv8--I",
+   "title": "Free CCNA | Subnetting (VLSM) | Day 15 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 899,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 29,
+   "id": "cjFzOnm6u1g",
+   "title": "Free CCNA | VLANs (Part 1) | Day 16 | CCNA 200-301 Complete Course",
+   "durationSec": 1425,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 30,
+   "id": "-tq7f3xtyLQ",
+   "title": "Free CCNA | VLANs (Part 1) | Day 16 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 662,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 31,
+   "id": "Jl9OOzNaBDU",
+   "title": "Free CCNA | VLANs (Part 2) | Day 17 | CCNA 200-301 Complete Course",
+   "durationSec": 2401,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 32,
+   "id": "iRkFE_lpYgc",
+   "title": "Free CCNA | VLANs (Part 2) | Day 17 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1403,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 33,
+   "id": "OkPB028l2eE",
+   "title": "Free CCNA | VLANs (Part 3) | Day 18 | CCNA 200-301 Complete Course",
+   "durationSec": 1952,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 34,
+   "id": "MQcCr3QW1vE",
+   "title": "Free CCNA | VLANs (Part 3) | Day 18 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1519,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 35,
+   "id": "JtQV_0Sjszg",
+   "title": "Free CCNA | DTP/VTP | Day 19 | CCNA 200-301 Complete Course",
+   "durationSec": 2254,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 36,
+   "id": "ngTns2vF_44",
+   "title": "Free CCNA | DTP/VTP | Day 19 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1127,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 37,
+   "id": "j-bK-EFt9cY",
+   "title": "Free CCNA | Spanning Tree Protocol (Part 1) | Day 20 | CCNA 200-301 Complete Course",
+   "durationSec": 2319,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 38,
+   "id": "Ev9gy7B5hx0",
+   "title": "Free CCNA | Analyzing STP | Day 20 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1135,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 39,
+   "id": "nWpldCc8msY",
+   "title": "Free CCNA | Spanning Tree Protocol (Part 2) | Day 21 | CCNA 200-301 Complete Course",
+   "durationSec": 2538,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 40,
+   "id": "zqzppl4LOwk",
+   "title": "PortFast (STP Toolkit) | CCNA 200-301 Day 21 (part 1)",
+   "durationSec": 1054,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 41,
+   "id": "jfC_AeJnuhY",
+   "title": "BPDU Guard & BPDU Filter (STP Toolkit) | CCNA 200-301 Day 21 (part 2)",
+   "durationSec": 1464,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 42,
+   "id": "2XE_PgkvSic",
+   "title": "Root Guard (STP Toolkit) | CCNA 200-301 Day 21 (part 3)",
+   "durationSec": 1184,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 43,
+   "id": "uJ5_Klha0ig",
+   "title": "Loop Guard (STP Toolkit) | CCNA 200-301 Day 21 (part 4)",
+   "durationSec": 1129,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 44,
+   "id": "5rpaeJNig2o",
+   "title": "Free CCNA | Configuring STP (PVST+) | Day 21 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1029,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 45,
+   "id": "EpazNsLlPps",
+   "title": "Free CCNA | Rapid Spanning Tree Protocol | Day 22 | CCNA 200-301 Complete Course",
+   "durationSec": 2581,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 46,
+   "id": "YG7r4XHy2JU",
+   "title": "Free CCNA | Rapid STP | Day 22 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1190,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 47,
+   "id": "xuo69Joy_Nc",
+   "title": "Free CCNA | EtherChannel | Day 23 | CCNA 200-301 Complete Course",
+   "durationSec": 2493,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 48,
+   "id": "8gKF2fMMjA8",
+   "title": "Free CCNA | Configuring EtherChannel | Day 23 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1503,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 49,
+   "id": "xSTgb8JLkvs",
+   "title": "Free CCNA | Dynamic Routing | Day 24 | CCNA 200-301 Complete Course",
+   "durationSec": 2678,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 50,
+   "id": "KuKC0G3LZc8",
+   "title": "Free CCNA | Floating Static Routes | Day 24 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1400,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 51,
+   "id": "N8PiZDld6Zc",
+   "title": "Free CCNA | RIP & EIGRP | Day 25 | CCNA 200-301 Complete Course",
+   "durationSec": 2622,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 52,
+   "id": "ffnJ5oBIObY",
+   "title": "Free CCNA | Configuring EIGRP | Day 25 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1574,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 53,
+   "id": "pvuaoJ9YzoI",
+   "title": "Free CCNA | OSPF Part 1 | Day 26 | CCNA 200-301 Complete Course",
+   "durationSec": 2380,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 54,
+   "id": "LeLRWjfylcs",
+   "title": "Free CCNA | Configuring OSPF (1) | Day 26 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1327,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 55,
+   "id": "VtzfTA21ht0",
+   "title": "Free CCNA | OSPF Part 2 | Day 27 | CCNA 200-301 Complete Course",
+   "durationSec": 2215,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 56,
+   "id": "UEyQW-EcnY8",
+   "title": "Free CCNA | Configuring OSPF (2) | Day 27 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1330,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 57,
+   "id": "3ew26ujkiDI",
+   "title": "Free CCNA | OSPF Part 3 | Day 28 | CCNA 200-301 Complete Course",
+   "durationSec": 2873,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 58,
+   "id": "Goekjm3bK5o",
+   "title": "Free CCNA | Configuring OSPF (3) | Day 28 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1285,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 59,
+   "id": "43WnpwQMolo",
+   "title": "Free CCNA | First Hop Redundancy Protocols | Day 29 | CCNA 200-301 Complete Course",
+   "durationSec": 2425,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 60,
+   "id": "uho5Z2nFhb8",
+   "title": "Free CCNA | Configuring HSRP | Day 29 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1321,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 61,
+   "id": "LIEACBqlntY",
+   "title": "Free CCNA | TCP & UDP | Day 30 | CCNA 200-301 Complete Course",
+   "durationSec": 2039,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 62,
+   "id": "pJKFahkqMU8",
+   "title": "Free CCNA | Wireshark Demo (TCP/UDP) | Day 30 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 675,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 63,
+   "id": "ZNuXyOXae5U",
+   "title": "Free CCNA | IPv6 Part 1 | Day 31 | CCNA 200-301 Complete Course",
+   "durationSec": 2366,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 64,
+   "id": "BdsIahtrWIA",
+   "title": "Free CCNA | Configuring IPv6 (Part 1) | Day 31 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1082,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 65,
+   "id": "BrTMMOXFhDU",
+   "title": "Free CCNA | IPv6 Part 2 | Day 32 | CCNA 200-301 Complete Course",
+   "durationSec": 2373,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 66,
+   "id": "Zfhpd7dl6QI",
+   "title": "Free CCNA | Configuring IPv6 (Part 2) | Day 32 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1262,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 67,
+   "id": "rwkHfsWQwy8",
+   "title": "Free CCNA | IPv6 Part 3 | Day 33 | CCNA 200-301 Complete Course",
+   "durationSec": 2631,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 68,
+   "id": "WSBEVFANMmc",
+   "title": "Free CCNA | Configuring IPv6 (Part 3) | Day 33 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1157,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 69,
+   "id": "z023_eRUtSo",
+   "title": "Free CCNA | Standard ACLs | Day 34 | CCNA 200-301 Complete Course",
+   "durationSec": 2811,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 70,
+   "id": "sJ8PXmiAkvs",
+   "title": "Free CCNA | Standard ACLs | Day 34 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1621,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 71,
+   "id": "dUttKY_CNXE",
+   "title": "Free CCNA | Extended ACLs | Day 35 | CCNA 200-301 Complete Course",
+   "durationSec": 2455,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 72,
+   "id": "1cuMzWBrEYs",
+   "title": "Free CCNA | Extended ACLs | Day 35 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1328,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 73,
+   "id": "_hnMZBzXRRk",
+   "title": "Free CCNA | CDP & LLDP | Day 36 | CCNA 200-301 Complete Course",
+   "durationSec": 2363,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 74,
+   "id": "4s8qqL7R9W8",
+   "title": "Free CCNA | CDP & LLDP | Day 36 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1477,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 75,
+   "id": "qGJaJx7OfUo",
+   "title": "Free CCNA | NTP | Day 37 | CCNA 200-301 Complete Course",
+   "durationSec": 2566,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 76,
+   "id": "Miys7Ft9wWI",
+   "title": "Free CCNA | NTP | Day 37 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1148,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 77,
+   "id": "4C6eeQes4cs",
+   "title": "Free CCNA | DNS | Day 38 | CCNA 200-301 Complete Course",
+   "durationSec": 1811,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 78,
+   "id": "7D_FapNrRUM",
+   "title": "Free CCNA | DNS | Day 38 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1051,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 79,
+   "id": "hzkleGAC2_Y",
+   "title": "Free CCNA | DHCP | Day 39 | CCNA 200-301 Complete Course",
+   "durationSec": 2222,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 80,
+   "id": "cgMsoIQB9Wk",
+   "title": "Free CCNA | DHCP | Day 39 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1069,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 81,
+   "id": "HXu0Ifj0oWU",
+   "title": "Free CCNA | SNMP | Day 40 | CCNA 200-301 Complete Course",
+   "durationSec": 1761,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 82,
+   "id": "v8WxIytUdS4",
+   "title": "Free CCNA | SNMP | Day 40 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 817,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 83,
+   "id": "RaQPSKQ4J5A",
+   "title": "Free CCNA | Syslog | Day 41 | CCNA 200-301 Complete Course",
+   "durationSec": 1678,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 84,
+   "id": "-R_CYM6Wm-Y",
+   "title": "Free CCNA | Syslog | Day 41 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 843,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 85,
+   "id": "AvgYqI2qSD4",
+   "title": "Free CCNA | SSH | Day 42 | CCNA 200-301 Complete Course",
+   "durationSec": 1867,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 86,
+   "id": "QnHq7iCOtTc",
+   "title": "Free CCNA | SSH | Day 42 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 950,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 87,
+   "id": "50hcfsoBf4Q",
+   "title": "Free CCNA | FTP & TFTP | Day 43 | CCNA 200-301 Complete Course",
+   "durationSec": 1855,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 88,
+   "id": "W9PLvA2wZ28",
+   "title": "Free CCNA | FTP & TFTP | Day 43 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 936,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 89,
+   "id": "2TZCfTgopeg",
+   "title": "Free CCNA | NAT (Part 1) | Day 44 | CCNA 200-301 Complete Course",
+   "durationSec": 1930,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 90,
+   "id": "vir6n_NVZFw",
+   "title": "Free CCNA | Static NAT | Day 44 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 852,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 91,
+   "id": "kILDNs4KjYE",
+   "title": "Free CCNA | NAT (part 2) | Day 45 | CCNA 200-301 Complete Course",
+   "durationSec": 1780,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 92,
+   "id": "vNs1xxiwGJs",
+   "title": "Free CCNA | Dynamic NAT | Day 45 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 901,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 93,
+   "id": "H6FKJMiiL6E",
+   "title": "Free CCNA | QoS (Part 1) | Day 46 | CCNA 200-301 Complete Course",
+   "durationSec": 1953,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 94,
+   "id": "kGX76QNIjsE",
+   "title": "Free CCNA | Voice VLANs | Day 46 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1218,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 95,
+   "id": "4vurfhVjcMM",
+   "title": "Free CCNA | QoS (Part 2) | Day 47 | CCNA 200-301 Complete Course",
+   "durationSec": 2506,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 96,
+   "id": "63tD4t8189k",
+   "title": "Free CCNA | QoS | Day 47 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 941,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 97,
+   "id": "VvFuieyTTSw",
+   "title": "Free CCNA | Security Fundamentals | Day 48 | CCNA 200-301 Complete Course",
+   "durationSec": 2320,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 98,
+   "id": "EBs47-0ZD-A",
+   "title": "Free CCNA | Kali Linux Demo | Day 48 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 625,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 99,
+   "id": "sHN3jOJIido",
+   "title": "Free CCNA | Port Security | Day 49 | CCNA 200-301 Complete Course",
+   "durationSec": 2068,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 100,
+   "id": "zZwhrxKeGj8",
+   "title": "Free CCNA | Port Security | Day 49 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1023,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 101,
+   "id": "qYYeg2kz1yE",
+   "title": "Free CCNA | DHCP Snooping | Day 50 | CCNA 200-301 Complete Course",
+   "durationSec": 1703,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 102,
+   "id": "YMom_e545H4",
+   "title": "Free CCNA | DHCP Snooping | Day 50 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 941,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 103,
+   "id": "HwbTKaIvL6s",
+   "title": "Free CCNA | Dynamic ARP Inspection | Day 51 | CCNA 200-301 Complete Course",
+   "durationSec": 1970,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 104,
+   "id": "oLF2mbmYMAk",
+   "title": "Free CCNA | Dynamic ARP Inspection | Day 51 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1253,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 105,
+   "id": "PvyEcLhmNBk",
+   "title": "Free CCNA | LAN Architectures | Day 52 | CCNA 200-301 Complete Course",
+   "durationSec": 1686,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 106,
+   "id": "BgIEhyoETgU",
+   "title": "Free CCNA | STP & FHRP Synchronization | Day 52 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1151,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 107,
+   "id": "BW3fQgdf4-w",
+   "title": "Free CCNA | WAN Architectures | Day 53 | CCNA 200-301 Complete Course",
+   "durationSec": 2254,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 108,
+   "id": "_MMuU5viinM",
+   "title": "Free CCNA | GRE Tunnels | Day 53 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1324,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 109,
+   "id": "_S3greGajJA",
+   "title": "Free CCNA | Virtualization & Cloud | Day 54 (part 1) | CCNA 200-301 Complete Course",
+   "durationSec": 2321,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 110,
+   "id": "K731pAS22Aw",
+   "title": "Free CCNA | Containers | Day 54 (part 2) | CCNA 200-301 Complete Course",
+   "durationSec": 813,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 111,
+   "id": "Ge4644KUvh4",
+   "title": "Free CCNA | VRF | Day 54 (part 3) | CCNA 200-301 Complete Course",
+   "durationSec": 1083,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 112,
+   "id": "swqADfQk2jM",
+   "title": "Free CCNA | Oracle VirtualBox | Day 54 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 523,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 113,
+   "id": "zuYiktLqNYQ",
+   "title": "Free CCNA | Wireless Fundamentals | Day 55 | CCNA 200-301 Complete Course",
+   "durationSec": 2157,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 114,
+   "id": "uX1h0F6wpBY",
+   "title": "Free CCNA | Wireless Architectures | Day 56 | CCNA 200-301 Complete Course",
+   "durationSec": 2301,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 115,
+   "id": "wHXKo9So5y8",
+   "title": "Free CCNA | Wireless Security | Day 57 | CCNA 200-301 Complete Course",
+   "durationSec": 2033,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 116,
+   "id": "r9o6GFI87go",
+   "title": "Free CCNA | Wireless Configuration | Day 58 | CCNA 200-301 Complete Course",
+   "durationSec": 2798,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 117,
+   "id": "Il8ev78fcqw",
+   "title": "Free CCNA | Wireless LANs | Day 58 Lab | CCNA 200-301 Complete Course",
+   "durationSec": 1048,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 118,
+   "id": "4tsBgMCPVuc",
+   "title": "Intro to Network Automation | CCNA 200-301 Day 59 (part 1)",
+   "durationSec": 2007,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 119,
+   "id": "Fn_kAv35W5A",
+   "title": "AI & Machine Learning | CCNA 200-301 Day 59 (part 2)",
+   "durationSec": 2509,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 120,
+   "id": "nohde2-QNJ4",
+   "title": "Free CCNA | JSON, XML, & YAML | Day 60 | CCNA 200-301 Complete Course",
+   "durationSec": 1736,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 121,
+   "id": "Luei0p-2h10",
+   "title": "Free CCNA | REST APIs | Day 61 | CCNA 200-301 Complete Course",
+   "durationSec": 1905,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 122,
+   "id": "bmqr_xpt6sc",
+   "title": "REST API Authentication | CCNA 200-301 Day 61 (part 2)",
+   "durationSec": 1755,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 123,
+   "id": "7HhWCeXDTpA",
+   "title": "Free CCNA | Software-Defined Networking | Day 62 | CCNA 200-301 Complete Course",
+   "durationSec": 1699,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 124,
+   "id": "Kog9gHTjALI",
+   "title": "Free CCNA | Ansible, Puppet, & Chef | Day 63 (part 1) | CCNA 200-301 Complete Course",
+   "durationSec": 1293,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 125,
+   "id": "VAwUaffejWU",
+   "title": "Terraform | CCNA 200-301 Day 63 (part 2)",
+   "durationSec": 1349,
+   "oembedAuthor": "Jeremy's IT Lab"
+  },
+  {
+   "pos": 126,
+   "id": "2p7-MluKAgE",
+   "title": "Complete Network Configuration // CCNA Mega Lab! / OSPF, VLANs, STP, DHCP, Security, Wireless + more",
+   "durationSec": 9530,
+   "oembedAuthor": "Jeremy's IT Lab"
+  }
+ ]
+}

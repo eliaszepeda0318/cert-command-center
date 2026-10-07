@@ -4,7 +4,7 @@ import type { Lesson, LabProgress, LessonProgress } from '../src/types';
 
 const L = (id: string, order: number, lecture: boolean, labIds: string[]): Lesson => ({
   id, certificationId: 'c', courseId: 'k', moduleId: null, order, dayNumber: order, title: id, altTitles: [], labIds, reviewFlags: [],
-  lectures: lecture ? [{ id: id + '-l', title: 't', kind: 'lecture', durationSec: 60, url: null, youtubeUrl: null, ccnaV11Addition: null, reviewFlags: [] }] : [] });
+  lectures: lecture ? [{ id: id + '-l', title: 't', kind: 'lecture', durationSec: 60, freeYoutubeUrl: 'https://www.youtube.com/watch?v=x', academyUrl: null, resourceAccess: 'free' as const, sourceType: 'youtube_free' as const, ccnaV11Addition: null, reviewFlags: [] }] : [] });
 const lessons = [L('d1', 1, true, ['d1-lab']), L('d2', 2, true, []), L('mega', 3, false, ['m-lab'])];
 const lp = (id: string, lec: boolean): LessonProgress => ({ type: 'lesson', lessonId: id, lectureCompleted: lec } as LessonProgress);
 const lab = (id: string, status: LabProgress['status']): LabProgress => ({ type: 'lab', labId: id, status } as LabProgress);
@@ -35,7 +35,7 @@ assert.deepEqual([c.daysDone, c.daysTotal, c.percent], [1, 3, 50]); // units: 2 
 console.log('progress tests passed');
 
 // ---- multi-lecture days + legacy migration ----
-const multi: Lesson = { ...L('d11', 11, true, []), lectures: ['a', 'b'].map((x) => ({ id: 'd11-' + x, title: x, kind: 'lecture' as const, durationSec: 60, url: null, youtubeUrl: null, ccnaV11Addition: null, reviewFlags: [] })) };
+const multi: Lesson = { ...L('d11', 11, true, []), lectures: ['a', 'b'].map((x) => ({ id: 'd11-' + x, title: x, kind: 'lecture' as const, durationSec: 60, freeYoutubeUrl: 'https://www.youtube.com/watch?v=x', academyUrl: null, resourceAccess: 'free' as const, sourceType: 'youtube_free' as const, ccnaV11Addition: null, reviewFlags: [] })) };
 let mm: ProgressMap = new Map<string, any>([['d11', { type: 'lesson', completedLectureIds: ['d11-a'] }]]);
 assert.equal(lessonState(multi, mm).complete, false, 'one of two lectures is not enough');
 assert.equal(lessonState(multi, mm).lecturesDone, 1);
@@ -54,7 +54,7 @@ import { readFileSync } from 'node:fs';
 const objs = JSON.parse(readFileSync('seed/blueprint-objectives.json', 'utf8'));
 const maps = JSON.parse(readFileSync('seed/lesson-objective-mappings.json', 'utf8'));
 assert.equal(objs.filter((o: any) => o.level === 'objective').length, 53, '53 top-level v1.1 objectives');
-const bl: Lesson = { ...L('ccna-jeremy-day-23', 23, true, ['ccna-jeremy-day-23-lab-1']), lectures: [{ id: 'ccna-jeremy-day-23-lec-1', title: 'EtherChannel', kind: 'lecture', durationSec: 60, url: null, youtubeUrl: null, ccnaV11Addition: null, reviewFlags: [] }] };
+const bl: Lesson = { ...L('ccna-jeremy-day-23', 23, true, ['ccna-jeremy-day-23-lab-1']), lectures: [{ id: 'ccna-jeremy-day-23-lec-1', title: 'EtherChannel', kind: 'lecture', durationSec: 60, freeYoutubeUrl: 'https://www.youtube.com/watch?v=x', academyUrl: null, resourceAccess: 'free' as const, sourceType: 'youtube_free' as const, ccnaV11Addition: null, reviewFlags: [] }] };
 const lm = new Map([[bl.id, bl]]);
 let cov = blueprintCoverage(objs, maps, lm, new Map());
 assert.equal(cov.rows.find((r) => r.objective.code === '2.4')!.status, 'not_started');
@@ -78,3 +78,26 @@ assert.equal(topicState(topic, { confidence: 3, missCount: 1 } as any, tl, lp1).
 assert.equal(topicState(topic, { confidence: 5, missCount: 2 } as any, tl, lp1).status, 'strong', 'a 5 stays strong');
 assert.ok(topicState(topic, { confidence: 2, missCount: 2 } as any, tl, lp1).priority > topicState(topic, { confidence: 2 } as any, tl, lp1).priority);
 console.log('blueprint + topic tests passed');
+
+// ---- free-first: optional paid resources never block anything ----
+{
+  const free = (id: string): any => ({ id, title: id, kind: 'lecture', durationSec: 60, freeYoutubeUrl: 'https://www.youtube.com/watch?v=x', academyUrl: null, resourceAccess: 'free', sourceType: 'youtube_free', ccnaV11Addition: null, reviewFlags: [] });
+  const paid = (id: string): any => ({ ...free(id), freeYoutubeUrl: null, academyUrl: 'https://courses.jeremysitlab.com/x', resourceAccess: 'paid_optional', sourceType: 'academy_only' });
+  const day: Lesson = { ...L('p1', 1, false, ['p1-lab']), lectures: [free('p1-a'), paid('p1-b'), { ...free('p1-extra'), kind: 'extra' }] };
+  const day2 = L('p2', 2, true, []);
+  const pm: ProgressMap = new Map<string, any>([['p1', { type: 'lesson', completedLectureIds: ['p1-a'] }], ['p1-lab', lab('p1-lab', 'completed')]]);
+  assert.equal(lessonState(day, pm).lecturesTotal, 1, 'paid_optional + extra lectures are not required');
+  assert.equal(lessonState(day, pm).complete, true, 'day completes without any paid/optional item');
+  assert.equal(nextLesson([day, day2], pm)?.id, 'p2', 'next study day moves past a day that only has optional paid items left');
+  const cc = courseCompletion([day, day2], pm);
+  assert.deepEqual([cc.lectures, cc.lectureTotal, cc.daysDone], [1, 2, 1], 'course completion ignores paid-optional items');
+  // blueprint coverage ignores mappings onto paid-optional lecture items (they can neither cover nor block)
+  const obj = { id: 'o', code: '9.1', level: 'objective', order: 1, domainCode: '9', text: 'x', parentCode: null } as any;
+  const mk = (itemId: string): any => ({ id: 'm' + itemId, objectiveId: 'o', objectiveCode: '9.1', lessonId: 'p1', itemId, itemKind: 'lecture', confidence: 'high' });
+  const covA = blueprintCoverage([obj], [mk('p1-a'), mk('p1-b')], new Map([['p1', day]]), pm);
+  assert.equal(covA.rows[0].status, 'covered', 'paid-optional mapped item does not block coverage');
+  assert.equal(covA.rows[0].high.length, 1);
+  const covB = blueprintCoverage([obj], [mk('p1-b')], new Map([['p1', day]]), pm);
+  assert.equal(covB.rows[0].status, 'no_content', 'a paid-optional-only mapping is not coverage content');
+  console.log('free-first progression tests passed');
+}

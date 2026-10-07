@@ -3,6 +3,8 @@
 Personal certification study tracker (React + TypeScript + Vite + Tailwind + Firebase Auth/Firestore/Hosting).
 CCNA 200-301 v1.1 first, driven by Jeremy's IT Lab. Certification-agnostic: Security+ or CCNA v2.0 are added as seed data.
 
+Study source: Jeremy's IT Lab **free YouTube course**. JITL Academy (paid) links appear only as optional extras and never block progress. Mapping audit: `docs/youtube-mapping-audit.md`.
+
 Open it and the Dashboard tells you what to study next: today's Anki, lectures and labs for the first incomplete day.
 
 Screens: Dashboard, Study, Roadmap, Labs, Topics, Blueprint, History, Notes, Exam Readiness, Applied at Work, Settings.
@@ -57,15 +59,18 @@ It also checks referential integrity (every mapping points at a real objective/l
 ## Deployment
 Manual: `npm run deploy` (build + Hosting). Rules: `npm run deploy:rules`.
 
-Workflow: edit locally, `npm run verify`, commit, `git push`. Pushes to `main` deploy Hosting automatically via
-`.github/workflows/deploy.yml` once the one-time setup below is done. Rules and seed data are deliberately **not** auto-deployed:
+Workflow: edit locally, `npm run verify`, commit, `git push`. Pushes to `main` deploy Hosting automatically once the one-time setup below is done (workflow template: `docs/github-actions-deploy.yml`). Rules and seed data are deliberately **not** auto-deployed:
 run `npm run deploy:rules` / `npm run seed` yourself when they change.
 
 ### Automatic deploys from GitHub (one-time)
+0. Install the workflow: `mkdir -p .github/workflows && cp docs/github-actions-deploy.yml .github/workflows/deploy.yml`, then commit it.
 1. Create a service account for deploys (Hosting Admin role is enough): `npx firebase init hosting:github` does this and sets the secret for you, or do it by hand:
    Console > Project settings > Service accounts, generate a key, and paste the JSON into the GitHub secret `FIREBASE_SERVICE_ACCOUNT` (Settings > Secrets and variables > Actions). Never commit the key.
 2. Add the five `VITE_FIREBASE_*` values from `.env` as repository **variables** (not secrets; they ship in the browser bundle anyway).
 3. Push to `main`. Check the Actions tab.
+
+## Curriculum sources (free-first)
+Each lecture/lab in `seed/ccna-jeremy-curriculum.json` points at an exact free YouTube video (`freeYoutubeUrl`), verified against the official playlist snapshot in `seed/source/`. `npm test` runs `scripts/curriculum.test.ts`, which fails if any id changed, any video is not in the snapshot, or a required item lacks a free video. Free lab files and flashcards come from Jeremy's email signup (`https://jitl.jp/ccna-files`); the app links to it and never copies his files.
 
 ## Curriculum updates (without losing progress)
 Edit files in `seed/` and run `npm run seed`. Progress documents are keyed by stable ids (`ccna-jeremy-day-01`, lecture item ids, lab ids).

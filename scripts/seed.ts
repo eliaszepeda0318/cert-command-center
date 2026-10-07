@@ -19,9 +19,9 @@ const PRUNE = args.includes('--prune');
 const seedPath = (f: string) => resolve(process.cwd(), 'seed', f);
 const readJson = <T>(f: string): T => JSON.parse(readFileSync(seedPath(f), 'utf8')) as T;
 
-interface SeedItem { id: string; title: string; kind: string; durationSec: number | null; url: string | null; youtubeUrl: string | null; downloadUrl?: string | null; ccnaV11Addition?: boolean | null; notes?: string; reviewFlags: string[]; durationSource?: string; teachableLectureId?: string }
+interface SeedItem { id: string; title: string; kind: string; durationSec: number | null; freeYoutubeUrl: string | null; academyUrl: string | null; resourceAccess: 'free' | 'paid_optional' | 'unverified'; sourceType: string; youtubeVerification?: string; labFilesUrl?: string | null; ccnaV11Addition?: boolean | null; notes?: string; reviewFlags: string[]; durationSource?: string; teachableLectureId?: string }
 interface SeedDay { id: string; day: number; title: string; altTitles: { source: string; title: string }[]; lectures: SeedItem[]; labs: SeedItem[]; reviewFlags: string[] }
-interface Curriculum { id: string; certificationId: string; title: string; playlistUrl: string | null; version: string; days: SeedDay[]; megaLab: SeedItem; _meta: unknown }
+interface Curriculum { id: string; certificationId: string; title: string; playlistUrl: string | null; version: string; primarySource?: string; freeResources?: unknown[]; days: SeedDay[]; megaLab: SeedItem; _meta: unknown }
 
 type Doc = { path: string; data: Record<string, unknown> };
 const docs: Doc[] = [];
@@ -44,7 +44,7 @@ cur.days.forEach((d, i) => {
   lessonIds.push(d.id);
   docs.push({ path: `lessons/${d.id}`, data: {
     id: d.id, certificationId: certId, courseId, moduleId: null, order: i + 1, dayNumber: d.day,
-    title: d.title, altTitles: d.altTitles, lectures: d.lectures.map(lectureOnly), labIds: d.labs.map((l) => l.id), reviewFlags: d.reviewFlags } });
+    title: d.title, altTitles: d.altTitles, lectures: d.lectures.map(lectureOnly), labIds: d.labs.filter((l) => l.resourceAccess !== 'paid_optional').map((l) => l.id), extraLabIds: d.labs.filter((l) => l.resourceAccess === 'paid_optional').map((l) => l.id), reviewFlags: d.reviewFlags } });
   d.labs.forEach((l, j) => docs.push(labDoc(l, d.id, j + 1)));
 });
 const megaLessonId = `${courseId}-mega-lab`;
@@ -55,7 +55,7 @@ docs.push({ path: `lessons/${megaLessonId}`, data: {
 docs.push(labDoc(cur.megaLab, megaLessonId, 1));
 docs.push({ path: `courses/${courseId}`, data: {
   id: courseId, certificationId: certId, title: cur.title, playlistUrl: cur.playlistUrl,
-  lessonCount: lessonIds.length, labCount: labIds.length, contentVersion: `${cur.version}-${hash('ccna-jeremy-curriculum.json')}` } });
+  lessonCount: lessonIds.length, labCount: labIds.length, primarySource: cur.primarySource ?? null, freeResources: cur.freeResources ?? [], contentVersion: `${cur.version}-${hash('ccna-jeremy-curriculum.json')}` } });
 
 // Topics, then blueprint (optional until imported): blueprints, objectives, lesson->objective mappings
 for (const [file, coll] of [['topics.json', 'topics'], ['blueprints.json', 'blueprints'], ['blueprint-objectives.json', 'blueprintObjectives'], ['lesson-objective-mappings.json', 'lessonObjectiveMappings']] as const) {
@@ -75,6 +75,17 @@ for (const d of docs.filter((x) => x.path.startsWith('lessonObjectiveMappings/')
   if (!(m.itemKind === 'lab' ? labSet : lectureSet).has(m.itemId)) problems.push(`${d.path}: unknown ${m.itemKind} ${m.itemId}`);
 }
 for (const d of docs.filter((x) => x.path.startsWith('topics/'))) for (const l of (d.data.lessonIds as string[])) if (!lessonSet.has(l)) problems.push(`${d.path}: unknown lesson ${l}`);
+// Free-first rule: a required item must have a free resource. Paid material can only ever be optional.
+for (const d of docs.filter((x) => x.path.startsWith('lessons/'))) {
+  for (const l of (d.data.lectures as { id: string; kind: string; resourceAccess?: string; freeYoutubeUrl?: string | null }[])) {
+    if (l.kind === 'lecture' && l.resourceAccess !== 'paid_optional' && (l.resourceAccess !== 'free' || !l.freeYoutubeUrl)) problems.push(`${l.id}: required lecture has no verified free YouTube URL`);
+  }
+}
+for (const d of docs.filter((x) => x.path.startsWith('labs/'))) {
+  const lab = d.data as { id: string; resourceAccess?: string; freeYoutubeUrl?: string | null; lessonId: string };
+  const lesson = docs.find((x) => x.path === `lessons/${lab.lessonId}`)!.data as { labIds: string[] };
+  if (lesson.labIds.includes(lab.id) && (lab.resourceAccess !== 'free' || !lab.freeYoutubeUrl)) problems.push(`${lab.id}: required lab has no verified free YouTube URL`);
+}
 if (problems.length) { console.error(problems.join('\n')); throw new Error(`Seed integrity check failed (${problems.length} problems)`); }
 
 if (docs.some((d) => d.path.startsWith('users/'))) throw new Error('Seed must never touch users/**');

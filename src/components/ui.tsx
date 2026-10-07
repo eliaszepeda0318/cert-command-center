@@ -55,3 +55,8 @@ export function ConfidencePicker({ value, onChange, label }: { value: number | n
 export const PageTitle = ({ title, sub }: { title: string; sub?: string }) => (
   <div className="mb-4"><h1 className="text-xl font-semibold">{title}</h1>{sub && <p className="text-sm text-zinc-500">{sub}</p>}</div>
 );
+
+/** Opens an external study resource in a new tab. */
+export const ExtLink = ({ href, children, muted = false }: { href: string; children: ReactNode; muted?: boolean }) => (
+  <a href={href} target="_blank" rel="noreferrer noopener" className={muted ? 'text-xs text-zinc-500 underline decoration-zinc-700 underline-offset-2 hover:text-zinc-300' : 'text-sky-400 hover:underline'}>{children}</a>
+);
