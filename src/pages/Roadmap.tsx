@@ -30,7 +30,7 @@ export default function Roadmap() {
                 </span>
                 {l.reviewFlags.length > 0 && <Pill tone="warn">Review</Pill>}
                 {isNext && <Pill tone="info">Next</Pill>}
-                {s.complete ? <Pill tone="good">Complete</Pill> : s.started ? <Pill tone="warn">In progress</Pill> : <Pill>Not started</Pill>}
+                {s.complete ? <Pill tone="good">Complete</Pill> : s.newContentDone ? <Pill tone="warn">Redo lab</Pill> : s.started ? <Pill tone="warn">In progress</Pill> : <Pill>Not started</Pill>}
               </Link>
             </li>
           );

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { courseCompletion, lessonState, nextLesson, type ProgressMap } from '../src/lib/progress';
+import { courseCompletion, lessonState, nextLesson, redoQueue, type ProgressMap } from '../src/lib/progress';
 import type { Lesson, LabProgress, LessonProgress } from '../src/types';
 
 const L = (id: string, order: number, lecture: boolean, labIds: string[]): Lesson => ({
@@ -16,6 +16,16 @@ assert.equal(lessonState(lessons[0], m).complete, false, 'lecture done but lab m
 assert.equal(nextLesson(lessons, m)?.id, 'd1');
 m.set('d1-lab', lab('d1-lab', 'needs_redo'));
 assert.equal(lessonState(lessons[0], m).complete, false, 'needs_redo is not complete');
+// redo labs do not hold the study path, but stay incomplete for mastery metrics
+assert.equal(lessonState(lessons[0], m).newContentDone, true, 'lecture done + lab needs_redo => new content done');
+assert.deepEqual(lessonState(lessons[0], m).redoLabIds, ['d1-lab']);
+assert.equal(nextLesson(lessons, m)?.id, 'd2', 'next day moves on past a day that only needs a lab redo');
+const redoC = courseCompletion(lessons, m);
+assert.deepEqual([redoC.daysDone, redoC.labs], [0, 0], 'redo lab still counts as incomplete in day/lab metrics');
+assert.deepEqual(redoQueue(lessons, new Map([['d1-lab', { id: 'd1-lab' } as any]]), m).map((x) => x.lab.id), ['d1-lab'], 'redo lab appears in the review queue');
+m.set('d1-lab', lab('d1-lab', 'attempted'));
+assert.equal(lessonState(lessons[0], m).newContentDone, false, 'attempted (unfinished) lab still blocks');
+assert.equal(nextLesson(lessons, m)?.id, 'd1');
 m.set('d1-lab', lab('d1-lab', 'completed'));
 assert.equal(lessonState(lessons[0], m).complete, true);
 assert.equal(nextLesson(lessons, m)?.id, 'd2');

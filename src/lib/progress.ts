@@ -21,7 +21,13 @@ export const localDateKey = (d = new Date()) =>
 
 export interface LessonState {
   needsLecture: boolean; lectureDone: boolean; lecturesDone: number; lecturesTotal: number; labsDone: number; labsTotal: number;
-  complete: boolean; started: boolean; unitsDone: number; unitsTotal: number;
+  /** Strictly complete: every required lecture done and every lab `completed`. Used for mastery/readiness metrics. */
+  complete: boolean;
+  /** All required new content is finished: lectures done and every lab attempted through to `completed` or `needs_redo`. Drives the study path. */
+  newContentDone: boolean;
+  /** Ids of labs flagged `needs_redo`; they live in the review queue, not the daily path. */
+  redoLabIds: string[];
+  started: boolean; unitsDone: number; unitsTotal: number;
 }
 /** A day is complete only when every required lecture item and every lab is complete. Anki is a daily task, not part of completion. */
 export function lessonState(lesson: Lesson, m: ProgressMap): LessonState {
@@ -35,12 +41,21 @@ export function lessonState(lesson: Lesson, m: ProgressMap): LessonState {
   const labsDone = labs.filter(isLabDone).length;
   const lectureDone = lecturesDone === lecturesTotal;
   const complete = lectureDone && labsDone === labsTotal;
+  const redoLabIds = lesson.labIds.filter((id) => labProg(m, id)?.status === 'needs_redo');
+  const newContentDone = lectureDone && labs.every((l) => l?.status === 'completed' || l?.status === 'needs_redo');
   const started = lecturesDone > 0 || labs.some((l) => l && l.status !== 'not_started');
-  return { needsLecture: lecturesTotal > 0, lectureDone, lecturesDone, lecturesTotal, labsDone, labsTotal, complete, started,
+  return { needsLecture: lecturesTotal > 0, lectureDone, lecturesDone, lecturesTotal, labsDone, labsTotal, complete, newContentDone, redoLabIds, started,
     unitsDone: lecturesDone + labsDone, unitsTotal: lecturesTotal + labsTotal };
 }
 
-export const nextLesson = (lessons: Lesson[], m: ProgressMap) => lessons.find((l) => !lessonState(l, m).complete);
+/** Next study day = first day with unfinished NEW required content. Redo labs don't hold the path; see `redoQueue`. */
+export const nextLesson = (lessons: Lesson[], m: ProgressMap) => lessons.find((l) => !lessonState(l, m).newContentDone);
+
+/** Review queue: labs marked needs_redo, in course order. Still counted as incomplete in lab/readiness metrics. */
+export function redoQueue(lessons: Lesson[], labsById: Map<string, Lab>, m: ProgressMap) {
+  return lessons.flatMap((lesson) => lesson.labIds.filter((id) => labProg(m, id)?.status === 'needs_redo').map((id) => ({ lesson, lab: labsById.get(id) })))
+    .filter((x): x is { lesson: Lesson; lab: Lab } => !!x.lab);
+}
 
 export function courseCompletion(lessons: Lesson[], m: ProgressMap) {
   let done = 0, total = 0, daysDone = 0, lectures = 0, lectureTotal = 0, labs = 0, labTotal = 0;

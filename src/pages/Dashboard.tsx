@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useAppData } from '../context/AppDataContext';
-import { completedLectureIds, courseCompletion, fmtDur, fmtMin, labProg, labsOf, levelFromXp, lessonProg, nextLesson, requiredLectures, weeklyMinutes, XP_PER_LEVEL } from '../lib/progress';
+import { completedLectureIds, courseCompletion, fmtDur, fmtMin, labProg, labsOf, levelFromXp, lessonProg, nextLesson, redoQueue, requiredLectures, weeklyMinutes, XP_PER_LEVEL } from '../lib/progress';
 import { topicState } from '../lib/topics';
 import { Card, EmptyState, Pill, ProgressBar, Stat, btnPrimary } from '../components/ui';
 
@@ -16,9 +16,10 @@ export default function Dashboard() {
   const tasks = next ? [
     { k: 'anki', label: 'Anki review (today)', meta: '', done: ankiDoneToday },
     ...requiredLectures(next).map((x) => ({ k: x.id, label: `Lecture: ${x.title}`, meta: fmtDur(x.durationSec), done: done.has(x.id) })),
-    ...labsOf(next, labsById).map((l) => { const st = labProg(progress, l.id)?.status; return { k: l.id, label: `${st === 'needs_redo' ? 'Redo lab' : 'Lab'}: ${l.title}`, meta: fmtDur(l.durationSec), done: st === 'completed' }; }),
+    ...labsOf(next, labsById).filter((l) => labProg(progress, l.id)?.status !== 'needs_redo').map((l) => ({ k: l.id, label: `Lab: ${l.title}`, meta: fmtDur(l.durationSec), done: labProg(progress, l.id)?.status === 'completed' })),
   ] : [];
   const weak = topics.map((t) => ({ t, s: topicState(t, topicProgress.get(t.id), lessonsById, progress) })).filter((x) => x.s.status === 'needs_review').sort((a, b) => b.s.priority - a.s.priority).slice(0, 5);
+  const redo = redoQueue(lessons, labsById, progress);
   const xp = profile.stats.xp;
   return (
     <div className="space-y-4">
@@ -53,6 +54,14 @@ export default function Dashboard() {
             <Stat label="Anki sessions" value={profile.stats.ankiSessions} />
           </div></Card>
       </div>
+      {redo.length > 0 && (
+        <Card title={`Labs to redo (${redo.length})`} action={<Link to="/labs" className="text-xs text-sky-400 hover:underline">All labs</Link>}>
+          <ul className="space-y-2 text-sm">{redo.slice(0, 5).map(({ lesson, lab }) => (
+            <li key={lab.id} className="flex items-center gap-2"><span className="w-12 shrink-0 text-xs tabular-nums text-zinc-500">{lesson.dayNumber != null ? `Day ${lesson.dayNumber}` : 'Capstone'}</span>
+              <Link to={`/study/${lesson.id}`} className="min-w-0 flex-1 truncate hover:underline">{lab.title}</Link><Pill tone="warn">Needs redo</Pill></li>))}</ul>
+          {redo.length > 5 && <p className="mt-2 text-xs text-zinc-500">+{redo.length - 5} more in Labs.</p>}
+          <p className="mt-2 text-xs text-zinc-600">Review work. These do not hold your daily study path, and they stay incomplete in lab and readiness numbers until redone.</p>
+        </Card>)}
       <Card title="Recent study activity">
         {sessions.length ? <ul className="divide-y divide-zinc-800 text-sm">{sessions.slice(0, 5).map((x) => (
           <li key={x.id} className="flex items-center justify-between gap-3 py-2"><span className="min-w-0 truncate">{x.dayNumber != null ? `Day ${x.dayNumber}: ` : ''}{x.lessonTitle}</span>
