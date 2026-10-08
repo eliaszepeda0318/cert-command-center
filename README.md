@@ -57,7 +57,7 @@ It also checks referential integrity (every mapping points at a real objective/l
 | `npm run emulators` | Local Auth + Firestore emulators (use with `VITE_USE_EMULATORS=true`; seed with `FIRESTORE_EMULATOR_HOST=127.0.0.1:8080`) |
 
 ## Deployment
-Manual: `npm run deploy` (build + Hosting). Rules: `npm run deploy:rules`.
+Manual: `npm run deploy` (build + Hosting). Rules: `npm run deploy:rules`. Both first check that an admin entitlement exists (docs/paid-access.md > step 0).
 
 Workflow: edit locally, `npm run verify`, commit, `git push`. Pushes to `main` deploy Hosting automatically once the one-time setup below is done (workflow template: `docs/github-actions-deploy.yml`). Rules and seed data are deliberately **not** auto-deployed:
 run `npm run deploy:rules` / `npm run seed` yourself when they change.
@@ -70,7 +70,7 @@ run `npm run deploy:rules` / `npm run seed` yourself when they change.
 3. Push to `main`. Check the Actions tab.
 
 ## Paid access (hard seat limit, Stripe, Cloud Functions)
-$10 one-time = 365 days, owner-controlled seat cap, enforced server-side (Cloud Functions + Firestore rules). Fully documented, including the safe rollout order and every manual step (Blaze, cost controls, Stripe test mode, secrets, test checkout, live launch), in [docs/paid-access.md](docs/paid-access.md). Owner commands: `npm run access -- status | init | set-max | open | close | grant-admin | comp | release`. **Before deploying the new Firestore rules, create your admin entitlement** (`npm run access -- grant-admin <your email>`) or you will lock yourself out.
+$10 one-time = 365 days, owner-controlled seat cap, enforced server-side (Cloud Functions + Firestore rules). Fully documented, including the safe rollout order and every manual step (Blaze, cost controls, Stripe test mode, secrets, test checkout, live launch), in [docs/paid-access.md](docs/paid-access.md). Owner commands: `npm run access -- status | init | set-max | open | close | grant-admin | comp | release`. **Before deploying the new Firestore rules or app, grant admin to the Firebase Auth account you actually use**: `npm run access -- find <email>` to see its UID, then `npm run access -- grant-admin --uid <UID>`. `npm run deploy` and `npm run deploy:rules` refuse to run until a valid admin entitlement exists.
 
 ## Curriculum sources (free-first)
 Each lecture/lab in `seed/ccna-jeremy-curriculum.json` points at an exact free YouTube video (`freeYoutubeUrl`), verified against the official playlist snapshot in `seed/source/`. `npm test` runs `scripts/curriculum.test.ts`, which fails if any id changed, any video is not in the snapshot, or a required item lacks a free video. Free lab files and flashcards come from Jeremy's email signup (`https://jitl.jp/ccna-files`); the app links to it and never copies his files.

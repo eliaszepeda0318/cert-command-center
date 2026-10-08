@@ -4,7 +4,7 @@
  *   FIRESTORE_EMULATOR_HOST=127.0.0.1:8080 npm run test:access   -> same suite against the real Firestore adapter (needs the emulator)
  */
 import assert from 'node:assert/strict';
-import { type AccessConfig, ACCESS_MS, DAY_MS, MAX_BANKED_MS, applyPayment, attachSession, compUser, extendedExpiry, grantAdmin, hasAccessAt, initConfig, patchConfig, releaseReservation, releaseSeat, reserveCheckout, type PaymentInput, type Store } from '../functions/src/core';
+import { type AccessConfig, ACCESS_MS, DAY_MS, MAX_BANKED_MS, applyPayment, attachSession, compUser, extendedExpiry, grantAdmin, hasAccessAt, isValidAdminEntitlement, initConfig, patchConfig, releaseReservation, releaseSeat, reserveCheckout, type PaymentInput, type Store } from '../functions/src/core';
 import { MemStore } from './memStore';
 
 const T0 = Date.UTC(2026, 9, 8, 12, 0, 0);
@@ -59,6 +59,14 @@ async function main() {
     assert.equal(hasAccessAt(e('comped', T0 + DAY_MS), T0), true);
     assert.equal(hasAccessAt(e('comped', T0 - 1), T0), false);
     assert.equal(hasAccessAt(e('admin', null), T0), true);
+  });
+
+  await test('isValidAdminEntitlement (pre-deploy lockout check): only a non-expiring admin counts', async () => {
+    assert.equal(isValidAdminEntitlement({ status: 'admin', accessExpiresAt: null }), true);
+    assert.equal(isValidAdminEntitlement({ status: 'admin' }), true);
+    assert.equal(isValidAdminEntitlement({ status: 'admin', accessExpiresAt: T0 }), false);
+    for (const status of ['active', 'comped', 'expired'] as const) assert.equal(isValidAdminEntitlement({ status, accessExpiresAt: null }), false);
+    assert.equal(isValidAdminEntitlement(undefined), false);
   });
 
   console.log('Checkout gate + payment');

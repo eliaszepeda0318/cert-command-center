@@ -6,7 +6,10 @@
  *   init --max <n>                 create appConfig/access (sales CLOSED). Never overwrites an existing one
  *   set-max <n>                    change the seat cap
  *   open | close                   open/close sales (close = kill switch: blocks ALL new checkouts, renewals included)
- *   grant-admin <email|uid>        permanent access that nothing can revoke (run this for yourself BEFORE deploying the new rules)
+ *   find <uid|email>               look up a Firebase Auth account (prints UID, email, providers, whether it has study data). Writes nothing
+ *   grant-admin --uid <UID>        permanent owner access that nothing can revoke. PREFERRED: a UID is unambiguous.
+ *   grant-admin --email <email>    convenience: only RESOLVES the account and prints the exact --uid command to run; add --yes to apply directly
+ *                                  (run this for yourself BEFORE deploying the new rules or hosting; deploy scripts refuse without it)
  *   comp <email|uid> [--days N]    free access for N days (default 365); uses no paid seat
  *   release <email|uid>            end a paid user's access and free their seat
  *
@@ -36,6 +39,13 @@ async function resolveUser(who: string | undefined): Promise<{ uid: string; emai
   const u = who.includes('@') ? await getAuth().getUserByEmail(who) : await getAuth().getUser(who);
   return { uid: u.uid, email: u.email ?? null };
 }
+/** Look up an account in Firebase Auth and say whether it is the one that holds study data (users/{uid}). Throws if it doesn't exist. */
+async function describeAccount(by: { uid?: string; email?: string }) {
+  const u = by.uid ? await getAuth().getUser(by.uid) : await getAuth().getUserByEmail(by.email!);
+  const hasStudyData = (await db.doc(`users/${u.uid}`).get()).exists;
+  console.log(`  uid:        ${u.uid}\n  email:      ${u.email ?? '(none)'}\n  name:       ${u.displayName ?? '(none)'}\n  sign-in:    ${u.providerData.map((p) => p.providerId).join(', ') || '(none)'}\n  disabled:   ${u.disabled}\n  study data: ${hasStudyData ? 'yes (users/' + u.uid + ' exists: this account has used the app)' : 'NO (no users/' + u.uid + ' profile yet)'}`);
+  return { uid: u.uid, email: u.email ?? null, disabled: u.disabled, hasStudyData };
+}
 async function status() {
   const cfg = (await db.doc(PATHS.config).get()).data();
   console.log('appConfig/access:', cfg ?? '(missing: run `npm run access -- init --max <n>`)');
@@ -61,7 +71,18 @@ async function main() {
     case 'set-max': { const max = Number(positional[0]); console.log('config:', await patchConfig(store, { maxPaidUsers: max })); break; }
     case 'open': console.log('config:', await patchConfig(store, { salesOpen: true })); break;
     case 'close': console.log('config:', await patchConfig(store, { salesOpen: false })); break;
-    case 'grant-admin': { const u = await resolveUser(positional[0]); await grantAdmin(store, { ...u, now }); console.log(`admin granted to ${u.email ?? u.uid} (${u.uid})`); break; }
+    case 'find': { const who = positional[0]; if (!who) throw new Error('Usage: find <uid|email>'); await describeAccount(who.includes('@') ? { email: who } : { uid: who }); return; }
+    case 'grant-admin': {
+      const uid = flag('--uid'), email = flag('--email');
+      if (positional.length) throw new Error('Be explicit: use --uid <UID> (preferred) or --email <email>. A bare argument is rejected so there is no ambiguity about who becomes admin.');
+      if (!!uid === !!email) throw new Error('Pass exactly one of --uid <UID> or --email <email>.');
+      console.log('Account found in Firebase Auth:');
+      const a = await describeAccount(uid ? { uid } : { email });
+      if (a.disabled) throw new Error('That account is disabled in Firebase Auth. Refusing.');
+      if (email && !rest.includes('--yes')) { console.log(`\nNothing written. If this is YOUR Cert Command Center account (the one with study data), run:\n  npm run access -- grant-admin --uid ${a.uid}`); return; }
+      if (!a.hasStudyData) console.warn('\nNOTE: this account has no study data yet. If you already use the app, you may be picking the wrong account. Cancel with Ctrl+C within 5 seconds.'), await new Promise((r) => setTimeout(r, 5000));
+      await grantAdmin(store, { uid: a.uid, email: a.email, now }); console.log(`\nadmin granted to ${a.email ?? a.uid} (${a.uid})`); break;
+    }
     case 'comp': { const u = await resolveUser(positional[0]); const days = Number(flag('--days') ?? 365); const r = await compUser(store, { ...u, days, now }); console.log(`comped ${u.email ?? u.uid} until ${fmt(r.expiresAt)}`); break; }
     case 'release': { const u = await resolveUser(positional[0]); const r = await releaseSeat(store, { uid: u.uid, now }); console.log(`released ${u.email ?? u.uid}${r.freed ? ' (seat freed)' : ' (held no paid seat)'}`); break; }
     default: throw new Error(`Unknown command "${cmd}".`);

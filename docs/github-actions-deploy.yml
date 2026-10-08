@@ -3,6 +3,8 @@ name: Deploy to Firebase Hosting
 # Runs on every push to main: verify, build, then publish to the live Hosting site.
 # Firestore security rules are NOT deployed here (a deliberate manual step: `npm run deploy:rules`),
 # so a push can never loosen database access by accident.
+# !! Do NOT install this until the paid-access rollout (docs/paid-access.md step 0) is complete: this workflow deploys the
+# !! paywalled web app WITHOUT the admin-entitlement safety check that `npm run deploy` performs.
 # Install: mkdir -p .github/workflows && cp docs/github-actions-deploy.yml .github/workflows/deploy.yml  (see README: "Automatic deploys from GitHub")
 
 on:

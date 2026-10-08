@@ -73,6 +73,9 @@ export function extendedExpiry(existingExpiresAt: number | null | undefined, pai
   return Math.max(existingExpiresAt ?? 0, paidAt) + ACCESS_MS;
 }
 
+/** A usable owner entitlement: status admin, never expires. Used by the pre-deploy lockout check. */
+export const isValidAdminEntitlement = (e: Partial<Entitlement> | undefined): boolean => !!e && e.status === 'admin' && (e.accessExpiresAt ?? null) === null;
+
 const liveReservations = (all: Reservation[], now: number, exceptUid?: string) => all.filter((r) => r.expiresAt > now && r.uid !== exceptUid);
 
 // ---------------------------------------------------------------- checkout (reserve a seat)

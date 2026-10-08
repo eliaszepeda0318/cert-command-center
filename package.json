@@ -13,16 +13,17 @@
     "test": "tsx scripts/progress.test.ts && tsx scripts/curriculum.test.ts && tsx scripts/access.test.ts",
     "test:rules": "firebase emulators:exec --only firestore --project demo-cert-rules \"tsx scripts/rules.test.ts\"",
     "emulators": "firebase emulators:start --only auth,firestore --project demo-cert",
-    "deploy": "npm run build && firebase deploy --only hosting",
+    "deploy": "npm run predeploy:check && npm run build && firebase deploy --only hosting",
     "env:write": "node scripts/write-env.mjs",
-    "deploy:rules": "firebase deploy --only firestore:rules,firestore:indexes",
+    "deploy:rules": "npm run predeploy:check && firebase deploy --only firestore:rules,firestore:indexes",
     "verify": "npm run functions:install && npm run typecheck && npm test && npm run seed:dry && npm run build",
     "test:access": "tsx scripts/access.test.ts",
     "test:access:emu": "firebase emulators:exec --only firestore --project demo-cert-access \"tsx scripts/access.test.ts\"",
     "access": "tsx scripts/access-admin.ts",
     "stripe:setup": "tsx scripts/stripe-setup.ts",
     "functions:install": "npm --prefix functions ci",
-    "deploy:functions": "firebase deploy --only functions"
+    "deploy:functions": "firebase deploy --only functions",
+    "predeploy:check": "tsx scripts/check-admin.ts"
   },
   "dependencies": {
     "firebase": "^10.14.1",

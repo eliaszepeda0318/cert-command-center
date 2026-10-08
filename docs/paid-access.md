@@ -47,7 +47,9 @@ npm run access -- init --max 25                 # first time only. Sales start C
 npm run access -- set-max 40                    # change the cap
 npm run access -- open                          # open sales
 npm run access -- close                         # close sales (kill switch)
-npm run access -- grant-admin you@example.com   # permanent access for the owner
+npm run access -- find you@example.com          # look up an account: prints its UID and whether it has study data (writes nothing)
+npm run access -- grant-admin --uid <UID>       # permanent owner access. Use the UID (preferred; unambiguous)
+npm run access -- grant-admin --email you@example.com   # convenience: only resolves + prints the exact --uid command (add --yes to apply)
 npm run access -- comp friend@example.com --days 90   # free access, no seat used
 npm run access -- release friend@example.com    # end access + free the seat
 npm run access -- set-max 40 --dry-run          # any command with --dry-run only prints current state
@@ -72,20 +74,30 @@ The client attaches a reCAPTCHA v3 App Check token to function calls when `VITE_
 
 ## 0. Safe rollout order for the existing app (don't skip: avoids locking yourself out)
 
-The new Firestore rules require an entitlement. **Create yours before deploying the rules.** None of this needs Blaze.
+The new Firestore rules **and** the new web app require an entitlement. **Create yours before deploying either.** None of this needs Blaze.
+
+**Which account?** It must be the Firebase Authentication account you actually sign in with at Cert Command Center (the one that already holds your study progress), not a guess. Identify it by UID:
+
+1. Find your UID, either way:
+   * Firebase console → Authentication → Users → copy the **User UID** of the account you use for the app, or
+   * `npm run access -- find <the email you sign in with>`: prints the UID and **study data: yes/NO**. "yes" means that account has a `users/{uid}` profile, i.e. it is the one you've been studying with. If it says NO, you probably have more than one Google account; check the other.
+2. Grant admin by UID:
 
 ```bash
 npm ci && npm run functions:install
 npm run verify                                   # typecheck, tests, seed dry run, build
+gcloud auth application-default login            # once; same credentials as the seed script
 export FIREBASE_PROJECT_ID=cert-command-center-eli
 npm run access -- init --max 25                  # sales closed
-npm run access -- grant-admin eliaszepeda@nr8r.com
-npm run access -- status                         # confirm you appear as admin / ACCESS
+npm run access -- grant-admin --uid <YOUR_FIREBASE_UID>
+npm run access -- status                         # confirm that exact UID/email is listed as `admin  ACCESS`
 npm run deploy:rules                             # now the rules are safe to deploy
 npm run deploy                                   # hosting (build + deploy)
 ```
 
-Open the site: you should land straight in the app (as admin). Open Settings → "Plan & access" shows Owner / Never. A second Google account should see the paywall (sales closed → "currently sold out").
+**Built-in guard.** `npm run deploy` and `npm run deploy:rules` first run `scripts/check-admin.ts`, which **refuses to deploy** unless (a) at least one entitlement with `status: admin` and no expiry exists, and (b) it belongs to a real, enabled Firebase Auth account (so a mistyped UID doesn't count). It fails closed: if it cannot reach Firestore/Auth (no credentials, wrong project, offline) the deploy stops. It needs `FIREBASE_PROJECT_ID` and the credentials above. Note it only protects those two npm scripts; a raw `firebase deploy` or an auto-deploy from GitHub bypasses it, so **don't install the GitHub auto-deploy workflow until the rollout below is finished**.
+
+Open the site: you should land straight in the app (as admin). Settings → "Plan & access" shows Owner / Never. A second Google account should see the paywall (sales closed → "currently sold out").
 
 (If you haven't yet pushed/reseeded/deployed the free-YouTube curriculum migration, do `git push origin main` and `npm run seed` first; they're independent.)
 
@@ -154,7 +166,7 @@ Stripe test card `4242 4242 4242 4242`, any future date, any CVC/ZIP. Check each
 | 6 | `access -- set-max 2`, then sign in with account D | "Founding access is currently sold out."; no new Checkout Session appears in Stripe |
 | 7 | `access -- set-max 3`, D reloads | Purchase button appears and works |
 | 8 | Firebase console → `entitlements/<test user>` → set `accessExpiresAt` to a past date | That user is sent to the paywall; their writes are rejected |
-| 9 | `access -- comp <email> --days 30`; `grant-admin` | Both get access; neither uses a seat |
+| 9 | `access -- comp <email> --days 30`; `grant-admin --uid <UID>` for a test account | Both get access; neither uses a seat |
 | 10 | Your own account | Still full access throughout |
 
 Also run the emulator suites on your Mac (Java 11+): `npm run test:rules` and `npm run test:access:emu`.
@@ -179,7 +191,7 @@ Also run the emulator suites on your Mac (Java 11+): `npm run test:rules` and `n
 
 ## Troubleshooting
 
-* **Locked out after deploying rules:** you skipped step 0. Fix with `npm run access -- grant-admin <you>` (Admin SDK bypasses rules), no redeploy needed.
+* **Locked out after deploying rules:** you skipped step 0. Fix with `npm run access -- grant-admin --uid <UID>` (Admin SDK bypasses rules), no redeploy needed.
 * **`status` warns counter ≠ held:** don't hand-edit. Tell me; the fix is a one-off Admin-SDK correction.
 * **Paid but no access:** Stripe → webhook deliveries (failing = wrong `STRIPE_WEBHOOK_SECRET` or not redeployed after setting it); Functions logs; `status`.
 * **Stuck "Confirming payment…":** the webhook hasn't landed; check deliveries above. It unlocks the moment the entitlement is written.
