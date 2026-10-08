@@ -35,3 +35,13 @@ docs. Nothing in a user's personal data references an objective id, and blueprin
 (All covered by the single owner-only rule on `users/{uid}/**`.)
 
 All timestamps are Firestore `Timestamp` (`serverTimestamp()` for user doc, `Timestamp.now()` inside batches).
+
+## Paid access (server-controlled; see docs/paid-access.md)
+| Collection | Doc id | Fields | Client rules |
+|---|---|---|---|
+| `appConfig` | `access` | salesOpen, maxPaidUsers, currentPaidUsers, foundingPriceCents (1000) | signed-in read of `access` only; no writes |
+| `entitlements` | `{uid}` | status (`active`/`expired`/`comped`/`admin`), accessStartedAt, accessExpiresAt (null for admin), stripeCustomerId, lastCheckoutSessionId, lastPaymentIntentId, updatedAt, seatHeld, email | owner read only; no writes |
+| `seatReservations` | `{uid}` | sessionId, createdAt, expiresAt (31-min hold taken when a NEW buyer starts checkout) | none (default deny) |
+| `stripePayments` | `{sessionId}` | uid, paymentIntentId, paidAt, processedAt, outcome, refundId (idempotency record) | none (default deny) |
+
+Access = `admin`, or status `active`/`comped` with `accessExpiresAt` in the future. Curriculum reads and `users/**` writes require it; `users/**` reads stay owner-only.

@@ -21,7 +21,7 @@ export const Stat = ({ label, value, sub }: { label: string; value: ReactNode; s
 
 const tones = { neutral: 'bg-zinc-800 text-zinc-300', good: 'bg-emerald-950 text-emerald-300', warn: 'bg-amber-950 text-amber-300', info: 'bg-sky-950 text-sky-300', bad: 'bg-red-950 text-red-300' };
 export const Pill = ({ tone = 'neutral', children }: { tone?: keyof typeof tones; children: ReactNode }) => (
-  <span className={`inline-flex items-center rounded px-1.5 py-0.5 text-xs font-medium ${tones[tone]}`}>{children}</span>
+  <span className={`inline-flex shrink-0 items-center whitespace-nowrap rounded px-1.5 py-0.5 text-xs font-medium ${tones[tone]}`}>{children}</span>
 );
 
 export const Spinner = ({ label = 'Loading' }: { label?: string }) => (

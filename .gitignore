@@ -2,6 +2,16 @@ node_modules
 dist
 .env
 .env.local
+.env.*.local
 serviceAccount*.json
+*-firebase-adminsdk-*.json
 .firebase
+firebase-debug.log
 *.log
+.DS_Store
+# Cloud Functions: build output, deps and project-specific params (Stripe keys live in Secret Manager, never in files)
+functions/node_modules
+functions/lib
+functions/.env
+functions/.env.*
+!functions/.env.example

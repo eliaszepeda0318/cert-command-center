@@ -120,3 +120,12 @@ export interface PracticeExam {
 export interface WorkApplication {
   id: string; certificationId: string; date: string; title: string; situation: string; knowledgeApplied: string; topicId: string | null; createdAt: Timestamp;
 }
+
+/** entitlements/{uid}: written only by the server (Stripe webhook / owner admin script). Clients can read their own. */
+export type EntitlementStatus = 'active' | 'expired' | 'comped' | 'admin';
+export interface Entitlement {
+  status: EntitlementStatus; accessStartedAt: Timestamp | null; accessExpiresAt: Timestamp | null; stripeCustomerId: string | null;
+  lastCheckoutSessionId: string | null; lastPaymentIntentId: string | null; updatedAt: Timestamp; seatHeld: boolean; email: string | null;
+}
+/** appConfig/access: server-controlled seat limit. */
+export interface AccessConfig { salesOpen: boolean; maxPaidUsers: number; currentPaidUsers: number; foundingPriceCents: number }
